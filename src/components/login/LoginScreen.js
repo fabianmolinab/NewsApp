@@ -1,25 +1,36 @@
 import React              from 'react';
+import styled             from 'styled-components';
 import { ButtonGradient } from '../ui/ButtonGradient';
 
-export const LoginScreen = () => {
-  const NombreBotton = 'Iniciar Sección';
-  return (
-      <div>
-        <div>
+import { BoxLogin }    from '../styles/login/BoxLogin';
+import { GlobalStyle } from '../styles/GlobalStyle';
 
-        </div>
-        <h2>Iniciar Sección</h2>
-        <form>
-          <div>
-            <input type="text"/>
-            <label>Correo Electronico</label>
-          </div>
-          <div>
-            <input type="text"/>
-            <label>Contraseña</label>
-          </div>
-          <ButtonGradient nombre={ NombreBotton }/>
-        </form>
-      </div>
+const Header = styled.header`
+  text-align: center;
+  margin: 40px;
+  box-sizing: border-box;
+`;
+
+export const LoginScreen = () => {
+  return (
+      <>
+        <GlobalStyle/>
+        <BoxLogin>
+          <Header>
+            <h2>Iniciar Sección en Segment</h2>
+          </Header>
+          <form>
+            <div>
+              <label>Correo Electronico</label>
+              <input type="text"/>
+            </div>
+            <div>
+              <label>Contraseña</label>
+              <input type="text"/>
+            </div>
+            <ButtonGradient nombre="Iniciar Sección"/>
+          </form>
+        </BoxLogin>
+      </>
   );
 };

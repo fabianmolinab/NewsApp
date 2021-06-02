@@ -1,15 +1,7 @@
-import React                         from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import React  from 'react';
+import styled from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
-  &* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-`;
-
-const Button = styled.button`
+const Button = styled.button` 
   position: absolute;
   width: 100%;
   height: 100%;
@@ -35,14 +27,12 @@ const Bg = styled.div`
   background: #fff;
   z-index: 2;
   transform: scale(1.05, 1.2);
-
 `;
 
 const BgGradient = styled( Bg )`
   z-index: 1;
   transform: scale(0.2, 1.4);
   transition: all .4s;
-
 `;
 
 const Contenedor = styled.div`
@@ -52,7 +42,7 @@ const Contenedor = styled.div`
   position: relative;
 
   &:hover ${ BgGradient } {
-    transform: scale(1.1, 1.4);
+    transform: scale(1.1, 1.4); 
     background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
   }
 `;
@@ -60,7 +50,6 @@ const Contenedor = styled.div`
 export const ButtonGradient = ( { nombre } ) => {
   return (
       <>
-        <GlobalStyle/>
         <Contenedor>
           <Button>
             { nombre }

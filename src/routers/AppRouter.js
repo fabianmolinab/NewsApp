@@ -8,8 +8,6 @@ export const AppRouter = () => {
         <Switch>
           <Route exact path="/login" component={LoginScreen}/>
         </Switch>
-
       </Router>
   );
 };
-
