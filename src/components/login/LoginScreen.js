@@ -6,6 +6,7 @@ import { BoxLogin }    from '../styles/login/BoxLogin';
 import { GlobalStyle } from '../styles/GlobalStyle';
 
 const Header = styled.header`
+  display: block;
   text-align: center;
   margin: 40px;
   box-sizing: border-box;
