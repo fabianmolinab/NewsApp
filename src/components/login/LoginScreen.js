@@ -5,7 +5,7 @@ import { ButtonGradient } from '../ui/ButtonGradient';
 import { BoxLogin }    from '../styles/login/BoxLogin';
 import { GlobalStyle } from '../styles/GlobalStyle';
 
-const CajaGlobal = styled.div`
+const BoxGlobal = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -33,10 +33,9 @@ const FormLogin = styled.form`
   align-content: center;
   max-height: 300px;
   height: 100%;
-
 `;
 
-const Contenedor = styled.div`
+const ContenedorInput = styled.div`
   height: 100px;
   font-size: 18px;
   font-weight: 600;
@@ -47,37 +46,53 @@ const Contenedor = styled.div`
 
   input {
     display: block;
-    width: 60%;
-    margin: 10px;
-    padding: 10px 15px;
+    width: 70%;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
   }
 `;
+
 export const LoginScreen = () => {
+
+  const handleLogin = () => {
+
+  };
+
   return (
       <>
         <GlobalStyle/>
 
 
-        <CajaGlobal>
+        <BoxGlobal>
           <ImgLogin alt="Imagen Login"
                     src="./assets/imgs/imagen-login.svg"/>
           <BoxLogin>
+
             <Header>
               <h2>Iniciar Sección en Segment</h2>
             </Header>
+
             <FormLogin>
-              <Contenedor>
+
+              <ContenedorInput>
                 <label>Correo Electronico</label>
-                <input type="text"/>
-              </Contenedor>
-              <Contenedor>
+                <input type="email" placeholder="correo@dominio.com"/>
+              </ContenedorInput>
+
+              <ContenedorInput>
                 <label>Contraseña</label>
-                <input type="text"/>
-              </Contenedor>
-              <ButtonGradient nombre="Iniciar Sección"/>
+                <input type="password" placeholder="+6 caracteres"/>
+              </ContenedorInput>
+
+
+              <ButtonGradient type="submit" nombre="Iniciar Sección"
+                              onclick={ handleLogin }/>
+
+
             </FormLogin>
           </BoxLogin>
-        </CajaGlobal>
+        </BoxGlobal>
       </>
   );
 };

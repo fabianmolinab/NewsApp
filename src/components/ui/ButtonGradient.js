@@ -1,7 +1,7 @@
 import React  from 'react';
 import styled from 'styled-components';
 
-const Button = styled.button` 
+const Button = styled.button`
   position: absolute;
   width: 100%;
   height: 100%;
@@ -10,13 +10,14 @@ const Button = styled.button`
   border: 1.5px solid #333;
   color: #333;
   cursor: pointer;
-  transition: all .4s;
+  transition: all .3s;
   z-index: 3;
 
   &:hover {
-    color: #fff;
+    color: #2d2d2d;
+    font-weight: 600;
     border: none;
-    background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+    background: linear-gradient(to right, #0CDFE8, #01FF7D, #5df54c);
   }
 `;
 
@@ -35,28 +36,29 @@ const BgGradient = styled( Bg )`
   transition: all .4s;
 `;
 
-const Contenedor = styled.div`
+const ContenedorBoton = styled.div`
+
   width: 150px;
   height: 40px;
   background: #fff;
   position: relative;
 
   &:hover ${ BgGradient } {
-    transform: scale(1.1, 1.4); 
-    background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+    transform: scale(1.1, 1.4);
+    background: linear-gradient(to right, #0CDFE8, #01FF7D, #5df54c);
   }
 `;
 
 export const ButtonGradient = ( { nombre } ) => {
   return (
       <>
-        <Contenedor>
+        <ContenedorBoton>
           <Button>
             { nombre }
           </Button>
           <Bg/>
           <BgGradient/>
-        </Contenedor>
+        </ContenedorBoton>
       </>
   );
 };
