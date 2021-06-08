@@ -11,5 +11,4 @@ export const BoxLogin = styled.div`
   //overflow: hidden;
   margin: 100px auto;
   box-sizing: border-box;
-  
 `;

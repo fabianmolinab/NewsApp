@@ -1,4 +1,5 @@
 import React              from 'react';
+import { useHistory }     from 'react-router-dom';
 import styled             from 'styled-components';
 import { ButtonGradient } from '../ui/ButtonGradient';
 
@@ -55,7 +56,17 @@ const ContenedorInput = styled.div`
 
 export const LoginScreen = () => {
 
-  const handleLogin = () => {
+  const history = useHistory();
+  console.log( history );
+
+  const handleLogin = ( e ) => {
+    e.preventDefault();
+    history.push( '/' );
+  };
+
+  //Acción del boton para llevar a la pagina de Registrate
+  const handleSignUp = () => {
+    history.push( '/loginup' );
 
   };
 
@@ -73,25 +84,38 @@ export const LoginScreen = () => {
               <h2>Iniciar Sección en Segment</h2>
             </Header>
 
-            <FormLogin>
+            <FormLogin onSubmit={ handleLogin }>
 
               <ContenedorInput>
                 <label>Correo Electronico</label>
-                <input type="email" placeholder="correo@dominio.com"/>
+                <input type="email"
+                       placeholder="correo@dominio.com"
+                       autoComplete="off"
+                />
               </ContenedorInput>
 
               <ContenedorInput>
                 <label>Contraseña</label>
-                <input type="password" placeholder="+6 caracteres"/>
+                <input type="password"
+                       placeholder="Ingrese la contraseña"
+                />
               </ContenedorInput>
 
 
-              <ButtonGradient type="submit" nombre="Iniciar Sección"
-                              onclick={ handleLogin }/>
+              <ButtonGradient type="submit"
+                              nombre="Iniciar Sección"/>
+
+              <button onClick={ handleSignUp }
+              >
+                Registrate
+              </button>
 
 
             </FormLogin>
+
           </BoxLogin>
+
+
         </BoxGlobal>
       </>
   );
