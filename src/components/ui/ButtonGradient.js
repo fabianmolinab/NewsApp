@@ -12,6 +12,7 @@ const Button = styled.button`
   cursor: pointer;
   transition: all .3s;
   z-index: 3;
+  border-radius: 10px;
 
   &:hover {
     color: #2d2d2d;
@@ -28,6 +29,7 @@ const Bg = styled.div`
   background: #fff;
   z-index: 2;
   transform: scale(1.05, 1.2);
+  border-radius: 10px;
 `;
 
 const BgGradient = styled( Bg )`
@@ -42,10 +44,11 @@ const ContenedorBoton = styled.div`
   height: 40px;
   background: #fff;
   position: relative;
+  border-radius: 10px;
 
   &:hover ${ BgGradient } {
     transform: scale(1.1, 1.4);
-    background: linear-gradient(to right, #0CDFE8, #01FF7D, #5df54c);
+    background: linear-gradient(to right, #0CDFE8, #0ed46c, #5df54c);
   }
 `;
 
