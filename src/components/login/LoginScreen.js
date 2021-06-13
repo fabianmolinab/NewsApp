@@ -1,29 +1,21 @@
 import React from 'react';
 
 import { useHistory } from 'react-router-dom';
-import { useForm }    from '../../hooks/useForm';
 
 import { GlobalStyle }    from '../styles/GlobalStyle';
 import {
   ContendorFormulario,
   ContendorGlobal,
-  ContendorLogin,
   ContenedorFlex,
-  ContenedorInput,
   Header,
   ImgLogin,
 }                         from '../styles/login/LoginStyles';
 import { ButtonGradient } from '../ui/ButtonGradient';
 import { Botton }         from '../ui/Botton';
 
+import InputFormulario from './InputFormulario';
+
 export const LoginScreen = () => {
-
-  //Custom hook que maneja el formulario del correo
-  const [values, handleInputChange] = useForm( {
-    formValues: '',
-  } );
-
-  const { formValues } = values;
 
   //Hook de React Router que nos permite tener acceso al History
   const history = useHistory();
@@ -38,11 +30,6 @@ export const LoginScreen = () => {
     history.push( '/signup' );
   };
 
-  // Comprobaciones
-  const ComprobacionesLogin = () => {
-
-  };
-
   return (
       <>
         <GlobalStyle/>
@@ -50,45 +37,38 @@ export const LoginScreen = () => {
         <ContendorGlobal>
           <ImgLogin alt="Imagen Login"
                     src="./assets/imgs/imagen-login.svg"/>
-          <ContendorLogin>
+
+
+          <ContendorFormulario onSubmit={ handleLogin }>
 
             <Header>
               <h2>Iniciar Sección en Segment</h2>
             </Header>
 
-            <ContendorFormulario onSubmit={ handleLogin }>
+            <InputFormulario name="Correo Electronico"
+                             type="text"
+                             error="Tienes un error en el correo"
+                             placeholder="correo@domino.com"
+            />
 
-              <ContenedorInput>
-                <label>Correo Electronico</label>
-                <input type="text"
-                       placeholder="correo@dominio.com"
-                       autoComplete="off"
-                       name="formValues"
-                       onChange={ handleInputChange }
-                       value={ formValues }
-                />
-              </ContenedorInput>
+            <InputFormulario name="Contraseña"
+                             type="password"
+                             error="Tienes un error en la contraseña"
+                             placeholder="Contraseña"
 
-              <ContenedorInput>
-                <label>Contraseña</label>
-                <input type="password"
-                       placeholder="Ingrese la contraseña"
-                />
-              </ContenedorInput>
+            />
 
-              <ContenedorFlex>
-                <ButtonGradient type="submit"
-                                nombre="Iniciar Sección"/>
+            <ContenedorFlex>
+              <ButtonGradient type="submit"
+                              nombre="Iniciar Sección"/>
 
-                <Botton onClick={ handleSignUp }>
-                  Registrate
-                </Botton>
-              </ContenedorFlex>
+              <Botton onClick={ handleSignUp }>
+                Registrate
+              </Botton>
+            </ContenedorFlex>
 
 
-            </ContendorFormulario>
-
-          </ContendorLogin>
+          </ContendorFormulario>
 
 
         </ContendorGlobal>
