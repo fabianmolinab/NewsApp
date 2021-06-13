@@ -6,8 +6,9 @@ import {
   Redirect,
 }            from 'react-router-dom';
 
-import { Blog } from '../components/blog/Blog';
+import { Blog }         from '../components/blog/Blog';
 import { BlogPodcasts } from '../components/blog/BlogPodcasts';
+//import { SignUp }       from '../components/signup/SignUp';
 
 export const DashboardRoutes = () => {
   return (
@@ -16,6 +17,7 @@ export const DashboardRoutes = () => {
           <Route exact path="/blog" component={ Blog }/>
           <Route exact path="/blog/podcasts" component={ BlogPodcasts }/>
           <Redirect to="/blog"/>
+
         </Switch>
 
       </Router>
