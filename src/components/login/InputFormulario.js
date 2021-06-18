@@ -1,13 +1,41 @@
 import React  from 'react';
 import styled from 'styled-components';
 
-const InputFormulario = ( { name, type, error, placeholder } ) => {
+export const InputFormulario = ( {
+  estado,
+  cambiarEstado,
+  name,
+  error,
+  placeholder,
+  expresionRegular,
+} ) => {
+
+  const onChange = ( { target } ) => {
+    cambiarEstado( {
+      ...estado,
+      campo: target.value,
+    } );
+  };
+
+  const validacion = () => {
+    if ( expresionRegular ) {
+      if ( expresionRegular.test( estado.campo ) ) {
+        console.log( 'Esta bien el campo' );
+      } else {
+        console.log( 'Esta mal el campo' );
+      }
+    }
+  };
+
   return (
       <ContenedorInput>
         <label>{ name }</label>
-        <input type={ type }
+        <input type="text"
                placeholder={ placeholder }
                autoComplete="off"
+               value={ estado.campo }
+               onChange={ onChange }
+               onBlur={ validacion }
         />
         <p> { error }</p>
       </ContenedorInput>
@@ -23,7 +51,6 @@ const ContenedorInput = styled.div`
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 10px;
-  //margin-top: 20px;
 
   input {
     display: block;
@@ -37,7 +64,7 @@ const ContenedorInput = styled.div`
   }
 
   p {
-    display: none;
+    display: block;
     height: 50px;
     width: 90%;
     color: red;
@@ -48,5 +75,3 @@ const ContenedorInput = styled.div`
     border-radius: 8px;
   }
 `;
-
-export default InputFormulario;

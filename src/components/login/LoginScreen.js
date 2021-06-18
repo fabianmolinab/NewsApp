@@ -1,21 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { useHistory } from 'react-router-dom';
-
-import { GlobalStyle }    from '../styles/GlobalStyle';
+import { useHistory }      from 'react-router-dom';
+import { GlobalStyle }     from '../styles/GlobalStyle';
 import {
   ContendorFormulario,
   ContendorGlobal,
   ContenedorFlex,
   Header,
   ImgLogin,
-}                         from '../styles/login/LoginStyles';
-import { ButtonGradient } from '../ui/ButtonGradient';
-import { Botton }         from '../ui/Botton';
+}                          from '../styles/login/LoginStyles';
+import { ButtonGradient }  from '../ui/ButtonGradient';
+import { Botton }          from '../ui/Botton';
+import { InputFormulario } from './InputFormulario';
 
-import InputFormulario from './InputFormulario';
+// Estas son expresiones regulares para realizar la validación
+const expresiones = {
+  usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+  nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+  password: /^.{4,12}$/, // 4 a 12 digitos.
+  correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+  telefono: /^\d{7,14}$/, // 7 a 14 numeros.
+};
 
 export const LoginScreen = () => {
+
+  const [correo, cambiarCorreo] = useState( {
+    campo: '', valido: null,
+  } );
+  const [contraseña, cambiarContraseña] = useState( {
+    campo: '', valido: null,
+  } );
 
   //Hook de React Router que nos permite tener acceso al History
   const history = useHistory();
@@ -45,17 +59,21 @@ export const LoginScreen = () => {
               <h2>Iniciar Sección en Segment</h2>
             </Header>
 
-            <InputFormulario name="Correo Electronico"
+            <InputFormulario estado={ correo }
+                             cambiarEstado={ cambiarCorreo }
+                             name="Correo Electronico"
                              type="text"
                              error="Tienes un error en el correo"
                              placeholder="correo@domino.com"
+                             expresionRegular={ expresiones.correo }
             />
 
-            <InputFormulario name="Contraseña"
-                             type="password"
+            <InputFormulario estado={ contraseña }
+                             cambiarEstado={ cambiarContraseña }
+                             name="Contraseña"
                              error="Tienes un error en la contraseña"
                              placeholder="Contraseña"
-
+                             expresionRegular={ expresiones.password }
             />
 
             <ContenedorFlex>
@@ -66,8 +84,6 @@ export const LoginScreen = () => {
                 Registrate
               </Botton>
             </ContenedorFlex>
-
-
           </ContendorFormulario>
 
 
