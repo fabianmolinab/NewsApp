@@ -1,5 +1,5 @@
-import React  from 'react';
-import styled from 'styled-components';
+import React                              from 'react';
+import { Alerta, ContenedorInput, Input } from '../styles/login/LoginStyles';
 
 export const InputFormulario = ( {
   estado,
@@ -10,6 +10,7 @@ export const InputFormulario = ( {
   expresionRegular,
 } ) => {
 
+  //Modifica el valor del formulario
   const onChange = ( { target } ) => {
     cambiarEstado( {
       ...estado,
@@ -17,12 +18,19 @@ export const InputFormulario = ( {
     } );
   };
 
+  // Realiza la validación del formulario internamente
   const validacion = () => {
     if ( expresionRegular ) {
       if ( expresionRegular.test( estado.campo ) ) {
-        console.log( 'Esta bien el campo' );
+        cambiarEstado( {
+          ...estado,
+          valido: 'true',
+        } );
       } else {
-        console.log( 'Esta mal el campo' );
+        cambiarEstado( {
+          ...estado,
+          valido: 'false',
+        } );
       }
     }
   };
@@ -30,48 +38,15 @@ export const InputFormulario = ( {
   return (
       <ContenedorInput>
         <label>{ name }</label>
-        <input type="text"
+        <Input type="text"
                placeholder={ placeholder }
                autoComplete="off"
                value={ estado.campo }
                onChange={ onChange }
                onBlur={ validacion }
         />
-        <p> { error }</p>
+        <Alerta valido={ estado.valido }> { error }</Alerta>
       </ContenedorInput>
 
   );
 };
-
-const ContenedorInput = styled.div`
-  width: 100%;
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
-
-  input {
-    display: block;
-    width: 400px;
-    max-width: 450px;
-    margin-top: 10px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1.5px solid #0ed46c;
-    border-radius: 8px;
-  }
-
-  p {
-    display: block;
-    height: 50px;
-    width: 90%;
-    color: red;
-    font-size: 17px;
-    font-weight: 600;
-    margin: 10px 0 5px 0;
-    padding: 0 5px 0 10px;
-    border-radius: 8px;
-  }
-`;

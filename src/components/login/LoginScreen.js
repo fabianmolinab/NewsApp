@@ -27,7 +27,7 @@ export const LoginScreen = () => {
   const [correo, cambiarCorreo] = useState( {
     campo: '', valido: null,
   } );
-  const [contraseña, cambiarContraseña] = useState( {
+  const [password, cambiarPassword] = useState( {
     campo: '', valido: null,
   } );
 
@@ -36,6 +36,10 @@ export const LoginScreen = () => {
 
   const handleLogin = ( e ) => {
     e.preventDefault();
+
+    if ( correo.valido === 'true' && password.valido === 'true' ) {
+      history.push( '/' );
+    }
 
   };
 
@@ -68,12 +72,13 @@ export const LoginScreen = () => {
                              expresionRegular={ expresiones.correo }
             />
 
-            <InputFormulario estado={ contraseña }
-                             cambiarEstado={ cambiarContraseña }
+            <InputFormulario estado={ password }
+                             cambiarEstado={ cambiarPassword }
                              name="Contraseña"
                              error="Tienes un error en la contraseña"
                              placeholder="Contraseña"
                              expresionRegular={ expresiones.password }
+
             />
 
             <ContenedorFlex>
