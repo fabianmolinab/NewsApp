@@ -1,10 +1,15 @@
-import React                              from 'react';
-import { Alerta, ContenedorInput, Input } from '../styles/login/LoginStyles';
+import React from 'react';
+import {
+  Alerta,
+  ContenedorInput,
+  Input, Label,
+}            from '../styles/login/LoginStyles';
 
 export const InputFormulario = ( {
   estado,
   cambiarEstado,
   name,
+  type,
   error,
   placeholder,
   expresionRegular,
@@ -37,14 +42,16 @@ export const InputFormulario = ( {
 
   return (
       <ContenedorInput>
-        <label>{ name }</label>
-        <Input type="text"
+        <Label color={ estado.valido }>{ name }</Label>
+        <Input type={type}
                placeholder={ placeholder }
                autoComplete="off"
                value={ estado.campo }
                onChange={ onChange }
                onBlur={ validacion }
+               valido={ estado.valido }
         />
+
         <Alerta valido={ estado.valido }> { error }</Alerta>
       </ContenedorInput>
 

@@ -37,6 +37,7 @@ export const LoginScreen = () => {
   const handleLogin = ( e ) => {
     e.preventDefault();
 
+    //Acá se realiza la validación de ambos formularios
     if ( correo.valido === 'true' && password.valido === 'true' ) {
       history.push( '/' );
     }
@@ -58,7 +59,6 @@ export const LoginScreen = () => {
 
 
           <ContendorFormulario onSubmit={ handleLogin }>
-
             <Header>
               <h2>Iniciar Sección en Segment</h2>
             </Header>
@@ -75,12 +75,12 @@ export const LoginScreen = () => {
             <InputFormulario estado={ password }
                              cambiarEstado={ cambiarPassword }
                              name="Contraseña"
+                             type="password"
                              error="Tienes un error en la contraseña"
                              placeholder="Contraseña"
                              expresionRegular={ expresiones.password }
 
             />
-
             <ContenedorFlex>
               <ButtonGradient type="submit"
                               nombre="Iniciar Sección"/>

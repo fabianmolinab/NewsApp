@@ -47,6 +47,18 @@ const ContenedorInput = styled.div`
 
 `;
 
+const Label = styled.label`
+  color: black;
+
+  ${ props => props.color === 'true' && css`
+    color: #0ed46c !important;
+  ` }
+
+  ${ props => props.color === 'false' && css`
+    color: red !important;
+  ` }
+`;
+
 const Alerta = styled.p`
   display: none;
   height: 50px;
@@ -73,9 +85,16 @@ const Input = styled.input`
   margin-top: 10px;
   padding: 10px;
   font-size: 16px;
-  border: 1.5px solid #0ed46c;
+  border: 1.5px solid #000;
   border-radius: 8px;
 
+  ${ props => props.valido === 'true' && css`
+    border: 1.5px solid #0ed46c;
+  !important;
+  ` }
+  ${ props => props.valido === 'false' && css`
+    border: 1.5px solid red !important;
+  ` }
 `;
 
 export {
@@ -85,6 +104,7 @@ export {
   ContendorFormulario,
   ContenedorFlex,
   ContenedorInput,
+  Label,
   Input,
   Alerta,
 };
