@@ -43,7 +43,7 @@ export const InputFormulario = ( {
   return (
       <ContenedorInput>
         <Label color={ estado.valido }>{ name }</Label>
-        <Input type={type}
+        <Input type={ type }
                placeholder={ placeholder }
                autoComplete="off"
                value={ estado.campo }
