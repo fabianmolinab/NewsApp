@@ -6,21 +6,14 @@ import {
   ContendorFormulario,
   ContendorGlobal,
   ContenedorFlex,
-  Header, ImgIcon,
+  HeaderLogin,
+  ImgIcon,
   ImgLogin,
-} from '../styles/login/LoginStyles';
+}                          from '../styles/LoginStyles';
 import { ButtonGradient }  from '../ui/ButtonGradient';
 import { Botton }          from '../ui/Botton';
 import { InputFormulario } from './InputFormulario';
-
-// Estas son expresiones regulares para realizar la validación
-const expresiones = {
-  usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
-  nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-  password: /^.{4,12}$/, // 4 a 12 digitos.
-  correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-  telefono: /^\d{7,14}$/, // 7 a 14 numeros.
-};
+import { expresiones }     from '../../data/expresionesRegulares';
 
 export const LoginScreen = () => {
 
@@ -62,12 +55,12 @@ export const LoginScreen = () => {
           <ContendorFormulario onSubmit={ handleLogin }>
             <div>
               <ImgIcon src="./assets/imgs/segment-icon.svg"
-                   alt="Icono Segment"
+                       alt="Icono Segment"
               />
             </div>
-            <Header>
+            <HeaderLogin>
               <h2>Iniciar Sección en Segment</h2>
-            </Header>
+            </HeaderLogin>
 
             <InputFormulario estado={ correo }
                              cambiarEstado={ cambiarCorreo }
@@ -85,7 +78,6 @@ export const LoginScreen = () => {
                              error="Tienes un error en la contraseña"
                              placeholder="Contraseña"
                              expresionRegular={ expresiones.password }
-
             />
             <ContenedorFlex>
               <ButtonGradient type="submit"

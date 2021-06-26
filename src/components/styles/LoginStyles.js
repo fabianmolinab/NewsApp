@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { device }      from '../../ui/device.js';
+import { device }      from '../ui/device.js';
 
 const ContendorGlobal = styled.div`
   display: flex;
@@ -7,11 +7,21 @@ const ContendorGlobal = styled.div`
   align-items: center;
   margin: 0 auto;
   height: 100%;
-  
+
   @media ${ device.tablet } {
     flex-direction: row;
     max-width: 1000px;
   };
+
+  //Estilos para el signup || La pagina de registrate
+
+  ${ props => props.signup && css`
+    display: block;
+
+    @media ${ device.tablet } {
+      max-width: 900px;
+    };
+  ` }
 `;
 
 const ImgIcon = styled.img`
@@ -35,7 +45,7 @@ const ImgLogin = styled.img`
 
 `;
 
-const Header = styled.header`
+const HeaderLogin = styled.header`
   text-align: center;
   margin-bottom: 20px;
   box-sizing: border-box;
@@ -63,7 +73,7 @@ const ContenedorFlex = styled.div`
 const ContenedorInput = styled.div`
   width: 100%;
   height: 100px;
-  display: flex;
+  //display: flex;
   flex-direction: column;
   font-size: 18px;
   font-weight: 600;
@@ -126,7 +136,7 @@ export {
   ContendorGlobal,
   ImgLogin,
   ImgIcon,
-  Header,
+  HeaderLogin,
   ContendorFormulario,
   ContenedorFlex,
   ContenedorInput,

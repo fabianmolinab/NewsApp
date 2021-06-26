@@ -3,7 +3,7 @@ import {
   Alerta,
   ContenedorInput,
   Input, Label,
-}            from '../styles/login/LoginStyles';
+}            from '../styles/LoginStyles';
 
 export const InputFormulario = ( {
   estado,
