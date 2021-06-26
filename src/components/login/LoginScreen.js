@@ -6,9 +6,9 @@ import {
   ContendorFormulario,
   ContendorGlobal,
   ContenedorFlex,
-  Header,
+  Header, ImgIcon,
   ImgLogin,
-}                          from '../styles/login/LoginStyles';
+} from '../styles/login/LoginStyles';
 import { ButtonGradient }  from '../ui/ButtonGradient';
 import { Botton }          from '../ui/Botton';
 import { InputFormulario } from './InputFormulario';
@@ -55,10 +55,16 @@ export const LoginScreen = () => {
 
         <ContendorGlobal>
           <ImgLogin alt="Imagen Login"
-                    src="./assets/imgs/imagen-login.svg"/>
+                    src="./assets/imgs/imagen-login.svg"
+          />
 
 
           <ContendorFormulario onSubmit={ handleLogin }>
+            <div>
+              <ImgIcon src="./assets/imgs/segment-icon.svg"
+                   alt="Icono Segment"
+              />
+            </div>
             <Header>
               <h2>Iniciar Sección en Segment</h2>
             </Header>
@@ -90,7 +96,6 @@ export const LoginScreen = () => {
               </Botton>
             </ContenedorFlex>
           </ContendorFormulario>
-
 
         </ContendorGlobal>
       </>

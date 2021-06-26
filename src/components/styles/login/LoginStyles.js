@@ -1,18 +1,38 @@
 import styled, { css } from 'styled-components';
+import { device }      from '../../ui/device.js';
 
 const ContendorGlobal = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  max-width: 1000px;
   margin: 0 auto;
   height: 100%;
+  
+  @media ${ device.tablet } {
+    flex-direction: row;
+    max-width: 1000px;
+  };
+`;
+
+const ImgIcon = styled.img`
+  width: 60%;
+  margin-bottom: 10px;
 `;
 
 const ImgLogin = styled.img`
   height: 600px;
   width: 49.5%;
   order: 0;
+
+  //La imagen no aparece en mobile
+  @media ${ device.mobileS } {
+    display: none;
+  };
+
+  @media ${ device.tablet } {
+    display: block;
+  };
+
 `;
 
 const Header = styled.header`
@@ -28,12 +48,16 @@ const ContendorFormulario = styled.form`
   align-items: center;
   height: 600px;
   width: 49.5%;
+
+  @media ${ device.mobileS } {
+    width: 80%;
+  };
 `;
 
 const ContenedorFlex = styled.div`
   display: flex;
+  margin-top: 15px;
   //align-items: center;
-
 `;
 
 const ContenedorInput = styled.div`
@@ -49,6 +73,7 @@ const ContenedorInput = styled.div`
 
 const Label = styled.label`
   color: black;
+  margin: 10px 0 5px 0;
 
   ${ props => props.color === 'true' && css`
     color: #0ed46c !important;
@@ -80,8 +105,8 @@ const Alerta = styled.p`
 
 const Input = styled.input`
   display: block;
-  width: 400px;
-  max-width: 450px;
+  width: 90%;
+  max-width: 95%;
   margin-top: 10px;
   padding: 10px;
   font-size: 16px;
@@ -100,6 +125,7 @@ const Input = styled.input`
 export {
   ContendorGlobal,
   ImgLogin,
+  ImgIcon,
   Header,
   ContendorFormulario,
   ContenedorFlex,
