@@ -1,9 +1,10 @@
-import React, { useState }  from 'react';
-import { GlobalStyle }      from '../styles/GlobalStyle';
-import { ContendorGlobal }  from '../styles/LoginStyles';
-import { InputFormulario }  from '../login/InputFormulario';
-import { expresiones }      from '../../data/expresionesRegulares';
-import { ContenedorSignup } from '../styles/SignUpStyles';
+import React, { useState }                  from 'react';
+import { GlobalStyle }                      from '../styles/GlobalStyle';
+import { ContendorGlobal }                  from '../styles/LoginStyles';
+import { InputFormulario }                  from '../login/InputFormulario';
+import { expresiones }                      from '../../data/expresionesRegulares';
+import { ContenedorName, ContenedorSignup } from '../styles/SignUpStyles';
+import { Botton }                           from '../ui/Botton';
 
 export const SignUp = () => {
   const [nombre, cambiarNombre] = useState( {
@@ -26,27 +27,24 @@ export const SignUp = () => {
     campo: '', valido: null,
   } );
 
-  const [usuario, cambiarUsuario] = useState( {
-    campo: '', valido: null,
-  } );
-
   return (
       <>
         <GlobalStyle/>
 
         <ContendorGlobal signup>
 
-          <h1> Gracias por querer registrarte en nuestra pagina </h1>
           <ContenedorSignup>
 
-            <InputFormulario estado={ nombre }
-                             cambiarEstado={ cambiarNombre }
-                             name="Nombre"
-                             type="text"
-                             error="Tienes que ingresar tu nombre"
-                             placeholder="Su nombre completo"
-                             expresionRegular={ expresiones.nombre }
-            />
+            <ContenedorName>
+              <InputFormulario estado={ nombre }
+                               cambiarEstado={ cambiarNombre }
+                               name="Nombre"
+                               type="text"
+                               error="Tienes que ingresar tu nombre"
+                               placeholder="Su nombre completo"
+                               expresionRegular={ expresiones.nombre }
+              />
+            </ContenedorName>
 
             <InputFormulario estado={ correo1 }
                              cambiarEstado={ cambiarCorreo1 }
@@ -84,16 +82,11 @@ export const SignUp = () => {
                              expresionRegular={ expresiones.password }
             />
 
-            <InputFormulario estado={ usuario }
-                             cambiarEstado={ cambiarUsuario }
-                             name="Confirma tu Contraseña"
-                             type="password"
-                             error="Tienes un error en la contraseña"
-                             placeholder="Contraseña"
-                             expresionRegular={ expresiones.usuario }
-            />
+            <Botton>Registrate</Botton>
 
           </ContenedorSignup>
+
+
         </ContendorGlobal>
       </>
   )

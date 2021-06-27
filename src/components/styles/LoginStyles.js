@@ -13,13 +13,13 @@ const ContendorGlobal = styled.div`
     max-width: 1000px;
   };
 
-  //Estilos para el signup || La pagina de registrate
+  //Estilos para el signup || La pagina de registrate || Hay que colocar esa propiedad para que se active
 
   ${ props => props.signup && css`
     display: block;
 
     @media ${ device.tablet } {
-      max-width: 900px;
+      max-width: 700px;
     };
   ` }
 `;
@@ -73,12 +73,10 @@ const ContenedorFlex = styled.div`
 const ContenedorInput = styled.div`
   width: 100%;
   height: 100px;
-  //display: flex;
   flex-direction: column;
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 10px;
-
 `;
 
 const Label = styled.label`
