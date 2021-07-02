@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import { useHistory }      from 'react-router-dom';
-import { GlobalStyle }     from '../styles/GlobalStyle';
+import { useHistory }     from 'react-router-dom';
+import { GlobalStyle }    from '../../styles/GlobalStyle';
 import {
   ContendorFormulario,
   ContendorGlobal,
@@ -9,10 +9,10 @@ import {
   HeaderLogin,
   ImgIcon,
   ImgLogin,
-}                          from '../styles/LoginStyles';
-import { ButtonGradient }  from '../ui/ButtonGradient';
+}                         from '../../styles/LoginStyles';
+import { ButtonGradient } from '../ui/ButtonGradient';
 import { Botton }          from '../ui/Botton';
-import { InputFormulario } from './InputFormulario';
+import { InputFormulario } from '../ui/InputFormulario';
 import { expresiones }     from '../../data/expresionesRegulares';
 
 export const LoginScreen = () => {

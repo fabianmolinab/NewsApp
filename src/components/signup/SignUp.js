@@ -1,10 +1,15 @@
-import React, { useState }                  from 'react';
-import { GlobalStyle }                      from '../styles/GlobalStyle';
-import { ContendorGlobal }                  from '../styles/LoginStyles';
-import { InputFormulario }                  from '../login/InputFormulario';
-import { expresiones }                      from '../../data/expresionesRegulares';
-import { ContenedorName, ContenedorSignup } from '../styles/SignUpStyles';
-import { Botton }                           from '../ui/Botton';
+import React, { useState } from 'react';
+
+import { GlobalStyle }     from '../../styles/GlobalStyle';
+import { ContendorGlobal } from '../../styles/LoginStyles';
+import { InputFormulario } from '../ui/InputFormulario';
+import { expresiones }     from '../../data/expresionesRegulares';
+import {
+  ContenedorName,
+  ContenedorSignup,
+  RegistroEnviado,
+}                          from '../../styles/SignUpStyles';
+import { Botton }          from '../ui/Botton';
 
 export const SignUp = () => {
   const [nombre, cambiarNombre] = useState( {
@@ -27,13 +32,29 @@ export const SignUp = () => {
     campo: '', valido: null,
   } );
 
+  const [mensajeConfirmacion, cambiarMensajeConfirmacion] = useState( 'false' );
+
+  //Validaciones de los campos del formulario
+  const handleLogin = ( e ) => {
+    e.preventDefault();
+
+    if ( correo1.campo === correo2.campo && password1.campo ===
+        password2.campo ) {
+      if ( nombre.valido === 'true' && correo1.valido === 'true' &&
+          correo2.valido === 'true' && password1.valido === 'true' &&
+          password2.valido === 'true' ) {
+        cambiarMensajeConfirmacion( 'true' );
+      }
+    }
+  };
+
   return (
       <>
         <GlobalStyle/>
 
         <ContendorGlobal signup>
 
-          <ContenedorSignup>
+          <ContenedorSignup onSubmit={ handleLogin }>
 
             <ContenedorName>
               <InputFormulario estado={ nombre }
@@ -82,7 +103,11 @@ export const SignUp = () => {
                              expresionRegular={ expresiones.password }
             />
 
-            <Botton>Registrate</Botton>
+            <Botton type="submit">Registrate</Botton>
+            <RegistroEnviado mensaje={ mensajeConfirmacion }>
+              Registro confirmado, revisa tu correo electronico para terminar el
+              registro
+            </RegistroEnviado>
 
           </ContenedorSignup>
 

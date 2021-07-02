@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { device }      from '../ui/device.js';
+import { device }      from './device.js';
 
 const ContendorGlobal = styled.div`
   display: flex;
