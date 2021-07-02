@@ -32,9 +32,10 @@ export const SignUp = () => {
     campo: '', valido: null,
   } );
 
+  //Estado para mostrar o no el envio del formulario
   const [mensajeConfirmacion, cambiarMensajeConfirmacion] = useState( 'false' );
 
-  //Validaciones de los campos del formulario
+  //Validaciones de todos los campos del formulario
   const handleLogin = ( e ) => {
     e.preventDefault();
 
