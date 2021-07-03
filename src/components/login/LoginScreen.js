@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import { useHistory }     from 'react-router-dom';
-import { GlobalStyle }    from '../../styles/GlobalStyle';
+import { useHistory }      from 'react-router-dom';
+import { GlobalStyle }     from '../../styles/GlobalStyle';
 import {
   ContendorFormulario,
   ContendorGlobal,
@@ -9,8 +9,8 @@ import {
   HeaderLogin,
   ImgIcon,
   ImgLogin,
-}                         from '../../styles/LoginStyles';
-import { ButtonGradient } from '../ui/ButtonGradient';
+}                          from '../../styles/LoginStyles';
+import { ButtonGradient }  from '../ui/ButtonGradient';
 import { Botton }          from '../ui/Botton';
 import { InputFormulario } from '../ui/InputFormulario';
 import { expresiones }     from '../../data/expresionesRegulares';
@@ -34,7 +34,6 @@ export const LoginScreen = () => {
     if ( correo.valido === 'true' && password.valido === 'true' ) {
       history.push( '/' );
     }
-
   };
 
   //Acción del boton para llevar a la pagina de Registrate
@@ -84,7 +83,7 @@ export const LoginScreen = () => {
                               nombre="Iniciar Sección"/>
 
               <Botton onClick={ handleSignUp }>
-                Registrate
+                Crea una cuenta
               </Botton>
             </ContenedorFlex>
           </ContendorFormulario>
