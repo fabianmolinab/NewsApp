@@ -10,6 +10,7 @@ import {
   RegistroEnviado,
 }                          from '../../styles/SignUpStyles';
 import { Botton }          from '../ui/Botton';
+import InputCheckbox       from '../ui/InputCheckbox';
 
 export const SignUp = () => {
   const [nombre, cambiarNombre] = useState( {
@@ -32,7 +33,10 @@ export const SignUp = () => {
     campo: '', valido: null,
   } );
 
-  //Estado para mostrar o no el envio del formulario
+  //Checked de Terminos y Condiciones
+  const [terminos, cambiarTerminos] = useState( { checked: false } );
+
+  //Estado para mostrar o no aviso el envio del formulario
   const [mensajeConfirmacion, cambiarMensajeConfirmacion] = useState( 'false' );
 
   //Validaciones de todos los campos del formulario
@@ -43,7 +47,7 @@ export const SignUp = () => {
         password2.campo ) {
       if ( nombre.valido === 'true' && correo1.valido === 'true' &&
           correo2.valido === 'true' && password1.valido === 'true' &&
-          password2.valido === 'true' ) {
+          password2.valido === 'true' && terminos.checked === true ) {
         cambiarMensajeConfirmacion( 'true' );
       }
     }
@@ -60,10 +64,10 @@ export const SignUp = () => {
             <ContenedorName>
               <InputFormulario estado={ nombre }
                                cambiarEstado={ cambiarNombre }
-                               name="Nombre"
+                               name="Nombre de Usuario"
                                type="text"
-                               error="Tienes que ingresar tu nombre"
-                               placeholder="Su nombre completo"
+                               error="Tienes un error con el nombre de usuario"
+                               placeholder="Su nombre de usuario"
                                expresionRegular={ expresiones.nombre }
               />
             </ContenedorName>
@@ -104,13 +108,24 @@ export const SignUp = () => {
                              expresionRegular={ expresiones.password }
             />
 
-            <Botton type="submit">Registrate</Botton>
+            <div>
+              <InputCheckbox estado={ terminos }
+                             cambiarEstado={ cambiarTerminos }
+              />
+              <label>Esta de acuerdo con la politica de <a>Terminos y
+                condiciones</a></label>
+            </div>
+
+            <Botton type="submit">Crear Cuenta</Botton>
+
             <RegistroEnviado mensaje={ mensajeConfirmacion }>
               Registro confirmado, revisa tu correo electronico para terminar el
               registro
             </RegistroEnviado>
 
           </ContenedorSignup>
+
+          <p>¿Ya tienes una cuenta? <a>Inicia Sección</a></p>
 
 
         </ContendorGlobal>
