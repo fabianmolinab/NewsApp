@@ -43,12 +43,17 @@ export const SignUp = () => {
   const handleLogin = ( e ) => {
     e.preventDefault();
 
+    //Validaciones de los campos de correo y contraseña sean iguales
     if ( correo1.campo === correo2.campo && password1.campo ===
         password2.campo ) {
+
+      //Validaciones de todos los campos
       if ( nombre.valido === 'true' && correo1.valido === 'true' &&
           correo2.valido === 'true' && password1.valido === 'true' &&
           password2.valido === 'true' && terminos.checked === true ) {
+
         cambiarMensajeConfirmacion( 'true' );
+
       }
     }
   };
@@ -111,16 +116,16 @@ export const SignUp = () => {
             <div>
               <InputCheckbox estado={ terminos }
                              cambiarEstado={ cambiarTerminos }
+                             name="condiciones"
               />
-              <label>Esta de acuerdo con la politica de <a>Terminos y
-                condiciones</a></label>
+              <label>Esta de acuerdo con la politica de <a>Terminos y condiciones</a>
+              </label>
             </div>
 
             <Botton type="submit">Crear Cuenta</Botton>
 
             <RegistroEnviado mensaje={ mensajeConfirmacion }>
-              Registro confirmado, revisa tu correo electronico para terminar el
-              registro
+              Registro confirmado, revisa tu correo electronico para terminar el registro
             </RegistroEnviado>
 
           </ContenedorSignup>
