@@ -50,6 +50,7 @@ export const InputFormulario = ( {
                onChange={ onChange }
                onBlur={ validacion }
                valido={ estado.valido }
+               name={ name }
         />
 
         <Alerta valido={ estado.valido }> { error }</Alerta>

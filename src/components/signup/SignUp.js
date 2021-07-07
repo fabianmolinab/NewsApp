@@ -37,24 +37,43 @@ export const SignUp = () => {
   const [terminos, cambiarTerminos] = useState( { checked: false } );
 
   //Estado para mostrar o no aviso el envio del formulario
-  const [mensajeConfirmacion, cambiarMensajeConfirmacion] = useState( 'false' );
+  const [mensajeConfirmacion, cambiarMensajeConfirmacion] = useState( {
+    correcto: 'false', fallido: 'false',
+  } );
 
   //Validaciones de todos los campos del formulario
   const handleLogin = ( e ) => {
     e.preventDefault();
 
     //Validaciones de los campos de correo y contraseña sean iguales
-    if ( correo1.campo === correo2.campo && password1.campo ===
-        password2.campo ) {
 
-      //Validaciones de todos los campos
-      if ( nombre.valido === 'true' && correo1.valido === 'true' &&
-          correo2.valido === 'true' && password1.valido === 'true' &&
-          password2.valido === 'true' && terminos.checked === true ) {
+    if ( nombre.valido === 'true' && correo1.valido === 'true' &&
+        correo2.valido === 'true' && password1.valido === 'true' &&
+        password2.valido === 'true' && terminos.checked === true ) {
 
-        cambiarMensajeConfirmacion( 'true' );
+      if ( correo1.campo === correo2.campo && password1.campo ===
+          password2.campo ) {
 
+        cambiarMensajeConfirmacion( {
+          correcto: 'true', fallido: 'false',
+        } );
+
+        console.log( 'mensaje bien' );
+        console.log( mensajeConfirmacion );
+
+      } else {
+        cambiarMensajeConfirmacion( {
+          correcto: 'false', fallido: 'true',
+        } );
+        console.log( 'mensaje mal 2grado' );
+        console.log( mensajeConfirmacion );
       }
+    } else {
+      cambiarMensajeConfirmacion( {
+        correcto: 'false', fallido: 'true',
+      } );
+      console.log( 'mensaje mal 1grado' );
+      console.log( mensajeConfirmacion );
     }
   };
 
@@ -112,23 +131,39 @@ export const SignUp = () => {
                              placeholder="Contraseña"
                              expresionRegular={ expresiones.password }
             />
-
-            <div>
-              <InputCheckbox estado={ terminos }
-                             cambiarEstado={ cambiarTerminos }
-                             name="condiciones"
-              />
-              <label>Esta de acuerdo con la politica de <a>Terminos y condiciones</a>
-              </label>
-            </div>
-
             <Botton type="submit">Crear Cuenta</Botton>
-
-            <RegistroEnviado mensaje={ mensajeConfirmacion }>
-              Registro confirmado, revisa tu correo electronico para terminar el registro
-            </RegistroEnviado>
-
           </ContenedorSignup>
+
+          <div>
+            <InputCheckbox estado={ terminos }
+                           cambiarEstado={ cambiarTerminos }
+                           name="condiciones"
+            />
+            <label>Esta de acuerdo con la politica de <a>Terminos
+              y condiciones</a>
+            </label>
+          </div>
+
+
+          <div>
+            {
+              ( mensajeConfirmacion.correcto === 'true' &&
+                  mensajeConfirmacion.fallido === 'false' )
+                  ?
+                  <RegistroEnviado mensaje={ mensajeConfirmacion.correcto }>
+                    Un mensaje fue enviado a su email para confirmar el registro
+                  </RegistroEnviado>
+                  : ( mensajeConfirmacion.correcto === 'false' &&
+                  mensajeConfirmacion.fallido === 'true' )
+                  ?
+                  <RegistroEnviado mensaje={ mensajeConfirmacion.fallido }>
+                    Le falto alguno de los cambios
+                  </RegistroEnviado>
+                  :
+                  <RegistroEnviado mensaje={ mensajeConfirmacion.fallido }/>
+
+            }
+          </div>
 
           <p>¿Ya tienes una cuenta? <a>Inicia Sección</a></p>
 
