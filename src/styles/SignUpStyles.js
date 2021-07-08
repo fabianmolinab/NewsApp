@@ -16,6 +16,11 @@ const ContenedorName = styled.div`
   }
 `;
 
+/*Estilos para mostrar o no el mensaje enviado,
+* Si es true su muestra el mensaje, si es false no se muestra
+* Ambas son propiedad de tipo string del componente
+*/
+
 const RegistroEnviado = styled.p`
   font-size: 17px;
   font-weight: 600;

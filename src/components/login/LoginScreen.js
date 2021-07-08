@@ -1,3 +1,7 @@
+/**
+ Este es el componente que genera la pagina de Login
+ */
+
 import React, { useState } from 'react';
 
 import { useHistory }      from 'react-router-dom';
@@ -13,13 +17,17 @@ import {
 import { ButtonGradient }  from '../ui/ButtonGradient';
 import { Botton }          from '../ui/Botton';
 import { InputFormulario } from '../ui/InputFormulario';
-import { expresiones }     from '../../data/expresionesRegulares';
+import { expresiones }     from '../../const/expresionesRegulares';
 
 export const LoginScreen = () => {
 
+
+  //Este hook es para manejar el formulario de Correo
   const [correo, cambiarCorreo] = useState( {
     campo: '', valido: null,
   } );
+
+  //Este hook es para manejar el formulario de Contraseña
   const [password, cambiarPassword] = useState( {
     campo: '', valido: null,
   } );
@@ -30,13 +38,12 @@ export const LoginScreen = () => {
   const handleLogin = ( e ) => {
     e.preventDefault();
 
-    //Acá se realiza la validación de ambos formularios
+    //Acá se realiza la validación de ambos formularios y redirija a '/'
     if ( correo.valido === 'true' && password.valido === 'true' ) {
       history.push( '/' );
     }
   };
 
-  //Acción del boton para llevar a la pagina de Registrate
   const handleSignUp = () => {
     history.push( '/signup' );
   };

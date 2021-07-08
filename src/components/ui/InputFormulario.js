@@ -1,3 +1,7 @@
+/*
+* Este componente es el input de algun formulario
+*/
+
 import React from 'react';
 import {
   Alerta,

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { GlobalStyle }     from '../../styles/GlobalStyle';
 import { ContendorGlobal } from '../../styles/LoginStyles';
 import { InputFormulario } from '../ui/InputFormulario';
-import { expresiones }     from '../../data/expresionesRegulares';
+import { expresiones }     from '../../const/expresionesRegulares';
 import {
   ContenedorName,
   ContenedorSignup,
@@ -33,24 +33,32 @@ export const SignUp = () => {
     campo: '', valido: null,
   } );
 
-  //Checked de Terminos y Condiciones
+  //Hook que cambia el estado del checkbox de terminos y condiciones
   const [terminos, cambiarTerminos] = useState( { checked: false } );
 
-  //Estado para mostrar o no aviso el envio del formulario
+  /*Hook que cambia el estado para mostrar o no aviso despues del envio de el formulario
+
+  * Correcto: Es cuando el formulario cumple con todas las condiciones y el mensaje que se envia es el correcto.
+  *
+  * Fallido: Es cuando alguno de los parametros del formulario falla y el mensaje que se muestra es el incorrecto.
+  * */
+
   const [mensajeConfirmacion, cambiarMensajeConfirmacion] = useState( {
     correcto: 'false', fallido: 'false',
   } );
+
 
   //Validaciones de todos los campos del formulario
   const handleLogin = ( e ) => {
     e.preventDefault();
 
-    //Validaciones de los campos de correo y contraseña sean iguales
+    // Este es el primer condicional que valida cada input del formulario
 
     if ( nombre.valido === 'true' && correo1.valido === 'true' &&
         correo2.valido === 'true' && password1.valido === 'true' &&
         password2.valido === 'true' && terminos.checked === true ) {
 
+      /*Segunda condicion que valida que los campos de correo y de contraseña sean iguales */
       if ( correo1.campo === correo2.campo && password1.campo ===
           password2.campo ) {
 
@@ -58,22 +66,15 @@ export const SignUp = () => {
           correcto: 'true', fallido: 'false',
         } );
 
-        console.log( 'mensaje bien' );
-        console.log( mensajeConfirmacion );
-
       } else {
         cambiarMensajeConfirmacion( {
           correcto: 'false', fallido: 'true',
         } );
-        console.log( 'mensaje mal 2grado' );
-        console.log( mensajeConfirmacion );
       }
     } else {
       cambiarMensajeConfirmacion( {
         correcto: 'false', fallido: 'true',
       } );
-      console.log( 'mensaje mal 1grado' );
-      console.log( mensajeConfirmacion );
     }
   };
 
