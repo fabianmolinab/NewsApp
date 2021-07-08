@@ -1,5 +1,12 @@
 /*
 * Este componente es el input de algun formulario
+* @param {object} estado
+* @param {funcion} cambiarEstado Cambia el estado del input
+* @param {string} name Titulo del formulario
+* @param {string} type Tipo de Input
+* @param {string} error Mensaje de error
+* @param {strng} placeholder
+* @param {object} expresionRegular Tipo de expresion regular
 */
 
 import React from 'react';

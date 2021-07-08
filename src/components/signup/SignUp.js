@@ -47,7 +47,6 @@ export const SignUp = () => {
     correcto: 'false', fallido: 'false',
   } );
 
-
   //Validaciones de todos los campos del formulario
   const handleLogin = ( e ) => {
     e.preventDefault();
