@@ -6,8 +6,8 @@ import {
   Redirect,
 }            from 'react-router-dom';
 
-import { Blog }         from '../components/home/Home';
-import { BlogPodcasts } from '../components/home/BlogPodcasts';
+import { Blog }         from '../pages/home/Home';
+import { BlogPodcasts } from '../pages/home/BlogPodcasts';
 //import { SignUp }       from '../components/signup/SignUp';
 
 export const DashboardRoutes = () => {

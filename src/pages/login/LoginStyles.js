@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { device }      from '../const/device.js';
+import { device }      from '../../const/device.js';
 
 const ContendorGlobal = styled.div`
   display: flex;
@@ -70,66 +70,6 @@ const ContenedorFlex = styled.div`
   //align-items: center;
 `;
 
-const ContenedorInput = styled.div`
-  width: 100%;
-  height: 100px;
-  flex-direction: column;
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
-`;
-
-const Label = styled.label`
-  color: black;
-  margin: 10px 0 5px 0;
-
-  ${ props => props.color === 'true' && css`
-    color: #0ed46c !important;
-  ` }
-
-  ${ props => props.color === 'false' && css`
-    color: red !important;
-  ` }
-`;
-
-const Alerta = styled.p`
-  display: none;
-  height: 50px;
-  width: 90%;
-  color: red;
-  font-size: 17px;
-  font-weight: 600;
-  margin: 10px 0 5px 0;
-  padding: 0 5px 0 10px;
-  border-radius: 8px;
-
-  ${ props => props.valido === 'true' && css`
-    display: none;
-  ` }
-  ${ props => props.valido === 'false' && css`
-    display: block;
-  ` }
-`;
-
-const Input = styled.input`
-  display: block;
-  width: 90%;
-  max-width: 95%;
-  margin-top: 10px;
-  padding: 10px;
-  font-size: 16px;
-  border: 1.5px solid #000;
-  border-radius: 8px;
-
-  ${ props => props.valido === 'true' && css`
-    border: 1.5px solid #0ed46c;
-  !important;
-  ` }
-  ${ props => props.valido === 'false' && css`
-    border: 1.5px solid red !important;
-  ` }
-`;
-
 export {
   ContendorGlobal,
   ImgLogin,
@@ -137,8 +77,4 @@ export {
   HeaderLogin,
   ContendorFormulario,
   ContenedorFlex,
-  ContenedorInput,
-  Label,
-  Input,
-  Alerta,
 };

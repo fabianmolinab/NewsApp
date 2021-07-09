@@ -1,34 +1,34 @@
+/**
+ * Pagina de Registrate
+ * */
 import React, { useState } from 'react';
 
 import { GlobalStyle }     from '../../styles/GlobalStyle';
-import { ContendorGlobal } from '../../styles/LoginStyles';
-import { InputFormulario } from '../ui/InputFormulario';
+import { ContendorGlobal } from '../login/LoginStyles';
+import { InputFormulario } from '../../components/molecules/InputFormulario';
 import { expresiones }     from '../../const/expresionesRegulares';
 import {
   ContenedorName,
   ContenedorSignup,
   RegistroEnviado,
 }                          from '../../styles/SignUpStyles';
-import { Botton }          from '../ui/Botton';
-import InputCheckbox       from '../ui/InputCheckbox';
+import { Botton }          from '../../components/atoms/Botton';
+import InputCheckbox       from '../../components/atoms/InputCheckbox';
 
 export const SignUp = () => {
+
   const [nombre, cambiarNombre] = useState( {
     campo: '', valido: null,
   } );
-
   const [correo1, cambiarCorreo1] = useState( {
     campo: '', valido: null,
   } );
-
   const [correo2, cambiarCorreo2] = useState( {
     campo: '', valido: null,
   } );
-
   const [password1, cambiarPassword1] = useState( {
     campo: '', valido: null,
   } );
-
   const [password2, cambiarPassword2] = useState( {
     campo: '', valido: null,
   } );
@@ -36,12 +36,11 @@ export const SignUp = () => {
   //Hook que cambia el estado del checkbox de terminos y condiciones
   const [terminos, cambiarTerminos] = useState( { checked: false } );
 
-  /*Hook que cambia el estado para mostrar o no aviso despues del envio de el formulario
+  /** Hook que cambia el estado para mostrar o no aviso despues del envio de el formulario
+   * Correcto: Es cuando el formulario cumple con todas las condiciones y el mensaje que se envia es el correcto.
 
-  * Correcto: Es cuando el formulario cumple con todas las condiciones y el mensaje que se envia es el correcto.
-  *
-  * Fallido: Es cuando alguno de los parametros del formulario falla y el mensaje que se muestra es el incorrecto.
-  * */
+   * Fallido: Es cuando alguno de los parametros del formulario falla y el mensaje que se muestra es el incorrecto.
+   */
 
   const [mensajeConfirmacion, cambiarMensajeConfirmacion] = useState( {
     correcto: 'false', fallido: 'false',
@@ -57,7 +56,7 @@ export const SignUp = () => {
         correo2.valido === 'true' && password1.valido === 'true' &&
         password2.valido === 'true' && terminos.checked === true ) {
 
-      /*Segunda condicion que valida que los campos de correo y de contraseña sean iguales */
+      /*Segunda condicion que valida que los campos de correo y de contraseña son iguales */
       if ( correo1.campo === correo2.campo && password1.campo ===
           password2.campo ) {
 
@@ -90,7 +89,7 @@ export const SignUp = () => {
                                cambiarEstado={ cambiarNombre }
                                name="Nombre de Usuario"
                                type="text"
-                               error="Tienes un error con el nombre de usuario"
+                               error="No puede llevar espacios, ni acentos"
                                placeholder="Su nombre de usuario"
                                expresionRegular={ expresiones.nombre }
               />
@@ -118,7 +117,7 @@ export const SignUp = () => {
                              cambiarEstado={ cambiarPassword1 }
                              name="Contraseña"
                              type="password"
-                             error="Tienes un error en la contraseña"
+                             error="Debe tener de 4 a 12 digitos"
                              placeholder="Contraseña"
                              expresionRegular={ expresiones.password }
             />
@@ -127,7 +126,7 @@ export const SignUp = () => {
                              cambiarEstado={ cambiarPassword2 }
                              name="Confirma tu Contraseña"
                              type="password"
-                             error="Tienes un error en la contraseña"
+                             error="Debe tener de 4 a 12 digitos"
                              placeholder="Contraseña"
                              expresionRegular={ expresiones.password }
             />

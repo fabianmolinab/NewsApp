@@ -1,3 +1,6 @@
+/**
+ * Componente de input tipo checkbox
+ * */
 import React from 'react';
 
 const InputCheckbox = ( { estado, cambiarEstado, name } ) => {

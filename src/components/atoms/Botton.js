@@ -1,3 +1,6 @@
+/**
+ * Componente boton estandar
+ * */
 import styled from 'styled-components';
 
 export const Botton = styled.button`

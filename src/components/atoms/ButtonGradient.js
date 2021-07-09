@@ -1,3 +1,6 @@
+/**
+ * Este componente es un boton de tipo gradiente
+ * */
 import React  from 'react';
 import styled from 'styled-components';
 

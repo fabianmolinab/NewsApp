@@ -5,7 +5,7 @@
 import React, { useState } from 'react';
 
 import { useHistory }      from 'react-router-dom';
-import { GlobalStyle }     from '../../styles/GlobalStyle';
+import { GlobalStyle }    from '../../styles/GlobalStyle';
 import {
   ContendorFormulario,
   ContendorGlobal,
@@ -13,10 +13,10 @@ import {
   HeaderLogin,
   ImgIcon,
   ImgLogin,
-}                          from '../../styles/LoginStyles';
-import { ButtonGradient }  from '../ui/ButtonGradient';
-import { Botton }          from '../ui/Botton';
-import { InputFormulario } from '../ui/InputFormulario';
+}                         from './LoginStyles';
+import { ButtonGradient }  from '../../components/atoms/ButtonGradient';
+import { Botton }          from '../../components/atoms/Botton';
+import { InputFormulario } from '../../components/molecules/InputFormulario';
 import { expresiones }     from '../../const/expresionesRegulares';
 
 export const LoginScreen = () => {

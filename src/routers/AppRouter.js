@@ -1,8 +1,8 @@
 import React                                      from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { LoginScreen }                            from '../components/login/LoginScreen';
-import { SignUp }                                 from '../components/signup/SignUp';
-import { DashboardRoutes }                        from './DashboardRoutes';
+import { LoginScreen }     from '../pages/login/LoginScreen';
+import { SignUp }          from '../pages/signup/SignUp';
+import { DashboardRoutes } from './DashboardRoutes';
 
 export const AppRouter = () => {
   return (
