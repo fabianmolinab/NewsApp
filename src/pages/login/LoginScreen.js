@@ -5,7 +5,7 @@
 import React, { useState } from 'react';
 
 import { useHistory }      from 'react-router-dom';
-import { GlobalStyle }    from '../../styles/GlobalStyle';
+import { GlobalStyle }     from '../../styles/GlobalStyle';
 import {
   ContendorFormulario,
   ContendorGlobal,
@@ -13,14 +13,13 @@ import {
   HeaderLogin,
   ImgIcon,
   ImgLogin,
-}                         from './LoginStyles';
+}                          from './LoginStyles';
 import { ButtonGradient }  from '../../components/atoms/ButtonGradient';
 import { Botton }          from '../../components/atoms/Botton';
 import { InputFormulario } from '../../components/molecules/InputFormulario';
 import { expresiones }     from '../../const/expresionesRegulares';
 
 export const LoginScreen = () => {
-
 
   //Este hook es para manejar el formulario de Correo
   const [correo, cambiarCorreo] = useState( {
@@ -89,9 +88,7 @@ export const LoginScreen = () => {
               <ButtonGradient type="submit"
                               nombre="Iniciar Sección"/>
 
-              <Botton onClick={ handleSignUp }>
-                Crea una cuenta
-              </Botton>
+              <Botton onClick={ handleSignUp } nombre="Crea una Cuenta"/>
             </ContenedorFlex>
           </ContendorFormulario>
 

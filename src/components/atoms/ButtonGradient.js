@@ -55,11 +55,11 @@ const ContenedorBoton = styled.div`
   }
 `;
 
-export const ButtonGradient = ( { nombre } ) => {
+export const ButtonGradient = ( { nombre, type } ) => {
   return (
       <>
         <ContenedorBoton>
-          <Button>
+          <Button type={ type }>
             { nombre }
           </Button>
           <Bg/>

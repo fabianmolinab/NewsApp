@@ -1,9 +1,20 @@
 /**
  * Componente boton estandar
+ * @param {function} onClick Accion despues del click
+ * @param {string} nombre Contenido del boton
  * */
 import styled from 'styled-components';
+import React from 'react';
 
-export const Botton = styled.button`
+export const Botton = ( { onClick, nombre } ) => {
+  return (
+      <BottonStyles onClick={ onClick }>
+        { nombre }
+      </BottonStyles>
+  );
+};
+
+export const BottonStyles = styled.button`
   width: 150px;
   height: 40px;
   margin-left: 20px;
