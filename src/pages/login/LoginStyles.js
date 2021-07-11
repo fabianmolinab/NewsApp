@@ -67,7 +67,6 @@ const ContendorFormulario = styled.form`
 const ContenedorFlex = styled.div`
   display: flex;
   margin-top: 15px;
-  //align-items: center;
 `;
 
 export {

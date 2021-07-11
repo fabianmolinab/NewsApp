@@ -1,27 +1,28 @@
 /**
  * Este componente es un boton de tipo gradiente
  * */
-import React  from 'react';
-import styled from 'styled-components';
+import React       from 'react';
+import styled      from 'styled-components';
+import { colores } from '../../styles/colores';
 
 const Button = styled.button`
   position: absolute;
   width: 100%;
   height: 100%;
   font-size: 1.1em;
-  background: #fff;
-  border: 1.5px solid #333;
-  color: #333;
+  background: ${ colores.blanco };
+  border: 1.5px solid ${ colores.textoNegro };
+  color: ${ colores.textoNegro };
   cursor: pointer;
   transition: all .3s;
   z-index: 3;
   border-radius: 10px;
 
   &:hover {
-    color: #2d2d2d;
+    color: ${ colores.textoNegro };
     font-weight: 600;
     border: none;
-    background: linear-gradient(to right, #0CDFE8, #01FF7D, #5df54c);
+    background: linear-gradient(to right, ${ colores.azul }, ${ colores.verde }, ${ colores.verdeIntenso });
   }
 `;
 
@@ -42,16 +43,15 @@ const BgGradient = styled( Bg )`
 `;
 
 const ContenedorBoton = styled.div`
-
   width: 150px;
   height: 40px;
-  background: #fff;
+  background: ${ colores.blanco };
   position: relative;
   border-radius: 10px;
 
   &:hover ${ BgGradient } {
     transform: scale(1.1, 1.4);
-    background: linear-gradient(to right, #0CDFE8, #0ed46c, #5df54c);
+    background: linear-gradient(to right, ${ colores.azul }, ${ colores.verde }, ${ colores.verdeIntenso });
   }
 `;
 

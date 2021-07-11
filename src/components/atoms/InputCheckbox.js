@@ -3,7 +3,7 @@
  * */
 import React from 'react';
 
-const InputCheckbox = ( { estado, cambiarEstado, name } ) => {
+export const InputCheckbox = ( { estado, cambiarEstado, id } ) => {
 
   const handleInputChange = ( { target } ) => {
     cambiarEstado( { ...estado, checked: target.checked } );
@@ -13,9 +13,9 @@ const InputCheckbox = ( { estado, cambiarEstado, name } ) => {
       <input type="checkbox"
              checked={ estado.checked }
              onChange={ handleInputChange }
-             name={name}
+             id={ id }
       />
   );
 };
 
-export default InputCheckbox;
+

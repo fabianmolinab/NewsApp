@@ -13,7 +13,7 @@ import {
   RegistroEnviado,
 }                          from '../../styles/SignUpStyles';
 import { Botton }          from '../../components/atoms/Botton';
-import InputCheckbox       from '../../components/atoms/InputCheckbox';
+import { InputCheckbox }   from '../../components/atoms/InputCheckbox';
 
 export const SignUp = () => {
 
@@ -130,15 +130,15 @@ export const SignUp = () => {
                              placeholder="Contraseña"
                              expresionRegular={ expresiones.password }
             />
-            <Botton type="submit">Crear Cuenta</Botton>
+            <Botton type="submit" nombre="Crear Cuenta"/>
           </ContenedorSignup>
 
           <div>
             <InputCheckbox estado={ terminos }
                            cambiarEstado={ cambiarTerminos }
-                           name="condiciones"
+                           id="condiciones"
             />
-            <label>Esta de acuerdo con la politica de <a>Terminos
+            <label htmlFor="condiciones">Esta de acuerdo con la politica de <a>Terminos
               y condiciones</a>
             </label>
           </div>
@@ -149,23 +149,25 @@ export const SignUp = () => {
               ( mensajeConfirmacion.correcto === 'true' &&
                   mensajeConfirmacion.fallido === 'false' )
                   ?
+
                   <RegistroEnviado mensaje={ mensajeConfirmacion.correcto }>
                     Un mensaje fue enviado a su email para confirmar el registro
                   </RegistroEnviado>
+
                   : ( mensajeConfirmacion.correcto === 'false' &&
                   mensajeConfirmacion.fallido === 'true' )
                   ?
+
                   <RegistroEnviado mensaje={ mensajeConfirmacion.fallido }>
                     Le falto alguno de los cambios
                   </RegistroEnviado>
+
                   :
                   <RegistroEnviado mensaje={ mensajeConfirmacion.fallido }/>
 
             }
           </div>
-
           <p>¿Ya tienes una cuenta? <a>Inicia Sección</a></p>
-
 
         </ContendorGlobal>
       </>

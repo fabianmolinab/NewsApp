@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { colores }           from './colores';
 
 export const GlobalStyle = createGlobalStyle`
   &* {
@@ -14,9 +15,11 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
+
   }
 
   body {
-    background-color: #fff;
+    background-color: ${ colores.blanco };
+    color: ${ colores.textoNegro };
   }
 `;

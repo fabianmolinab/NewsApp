@@ -8,6 +8,7 @@
  * */
 import React           from 'react';
 import styled, { css } from 'styled-components';
+import { colores }     from '../../styles/colores';
 
 export const Input = ( {
   estado,
@@ -65,14 +66,14 @@ const InputStyles = styled.input`
   font-size: 16px;
   border: 1.5px solid #000;
   border-radius: 8px;
+  background-color: ${ colores.blanco };
 
   /*La propiedad valido cambiar el color del borde del input*/
   ${ props => props.valido === 'true' && css`
-    border: 1.5px solid #0ed46c;
-  !important;
+    border: 1.5px solid ${ colores.verde } !important;
   ` }
   ${ props => props.valido === 'false' && css`
-    border: 1.5px solid red !important;
+    border: 1.5px solid ${ colores.rojo } !important;
   ` }
 `;
 
