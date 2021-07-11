@@ -11,13 +11,13 @@ import {
   ContendorGlobal,
   ContenedorFlex,
   HeaderLogin,
-  ImgIcon,
-  ImgLogin,
 }                          from './LoginStyles';
 import { ButtonGradient }  from '../../components/atoms/ButtonGradient';
 import { Botton }          from '../../components/atoms/Botton';
 import { InputFormulario } from '../../components/molecules/InputFormulario';
 import { expresiones }     from '../../const/expresionesRegulares';
+import { Icono }           from '../../components/atoms/Icono';
+import { ImgLogin }        from '../../components/atoms/ImgLogin';
 
 export const LoginScreen = () => {
 
@@ -52,16 +52,11 @@ export const LoginScreen = () => {
         <GlobalStyle/>
 
         <ContendorGlobal>
-          <ImgLogin alt="Imagen Login"
-                    src="./assets/imgs/imagen-login.svg"
-          />
-
+          <ImgLogin/>
 
           <ContendorFormulario onSubmit={ handleLogin }>
             <div>
-              <ImgIcon src="./assets/imgs/segment-icon.svg"
-                       alt="Icono Segment"
-              />
+              <Icono/>
             </div>
             <HeaderLogin>
               <h2>Iniciar Sección en Segment</h2>

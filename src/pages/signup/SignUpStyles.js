@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { colores }     from '../../styles/colores';
 
 const ContenedorSignup = styled.form`
   margin-top: 100px;
@@ -30,6 +31,9 @@ const RegistroEnviado = styled.p`
   ` }
   ${ props => props.mensaje === 'false' && css`
     display: none;
+  ` }
+  ${ props => props.fallido && css`
+    color: ${ colores.rojo };
   ` }
 
 `;

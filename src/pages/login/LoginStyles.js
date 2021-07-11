@@ -24,27 +24,6 @@ const ContendorGlobal = styled.div`
   ` }
 `;
 
-const ImgIcon = styled.img`
-  width: 60%;
-  margin-bottom: 10px;
-`;
-
-const ImgLogin = styled.img`
-  height: 600px;
-  width: 49.5%;
-  order: 0;
-
-  //La imagen no aparece en mobile
-  @media ${ device.mobileS } {
-    display: none;
-  };
-
-  @media ${ device.tablet } {
-    display: block;
-  };
-
-`;
-
 const HeaderLogin = styled.header`
   text-align: center;
   margin-bottom: 20px;
@@ -71,8 +50,6 @@ const ContenedorFlex = styled.div`
 
 export {
   ContendorGlobal,
-  ImgLogin,
-  ImgIcon,
   HeaderLogin,
   ContendorFormulario,
   ContenedorFlex,

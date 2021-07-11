@@ -2,6 +2,7 @@
  * Pagina de Registrate
  * */
 import React, { useState } from 'react';
+import { Link }            from 'react-router-dom';
 
 import { GlobalStyle }     from '../../styles/GlobalStyle';
 import { ContendorGlobal } from '../login/LoginStyles';
@@ -11,7 +12,7 @@ import {
   ContenedorName,
   ContenedorSignup,
   RegistroEnviado,
-}                          from '../../styles/SignUpStyles';
+}                          from './SignUpStyles';
 import { Botton }          from '../../components/atoms/Botton';
 import { InputCheckbox }   from '../../components/atoms/InputCheckbox';
 
@@ -84,6 +85,10 @@ export const SignUp = () => {
 
           <ContenedorSignup onSubmit={ handleLogin }>
 
+            <header>
+              Registrate en Segment
+            </header>
+
             <ContenedorName>
               <InputFormulario estado={ nombre }
                                cambiarEstado={ cambiarNombre }
@@ -138,8 +143,9 @@ export const SignUp = () => {
                            cambiarEstado={ cambiarTerminos }
                            id="condiciones"
             />
-            <label htmlFor="condiciones">Esta de acuerdo con la politica de <a>Terminos
-              y condiciones</a>
+            <label htmlFor="condiciones">Esta de acuerdo con la politica
+              de <Link to="/terminos">Terminos
+                y condiciones</Link>
             </label>
           </div>
 
@@ -158,12 +164,14 @@ export const SignUp = () => {
                   mensajeConfirmacion.fallido === 'true' )
                   ?
 
-                  <RegistroEnviado mensaje={ mensajeConfirmacion.fallido }>
+                  <RegistroEnviado mensaje={ mensajeConfirmacion.fallido }
+                                   fallido>
                     Le falto alguno de los cambios
                   </RegistroEnviado>
 
                   :
-                  <RegistroEnviado mensaje={ mensajeConfirmacion.fallido }/>
+                  <RegistroEnviado mensaje={ mensajeConfirmacion.fallido }
+                                   fallido/>
 
             }
           </div>
