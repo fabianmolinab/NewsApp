@@ -10,7 +10,6 @@ import {
   ContendorFormulario,
   ContendorGlobal,
   ContenedorFlex,
-  HeaderLogin,
 }                          from './LoginStyles';
 import { ButtonGradient }  from '../../components/atoms/ButtonGradient';
 import { Botton }          from '../../components/atoms/Botton';
@@ -18,6 +17,7 @@ import { InputFormulario } from '../../components/molecules/InputFormulario';
 import { expresiones }     from '../../const/expresionesRegulares';
 import { Icono }           from '../../components/atoms/Icono';
 import { ImgLogin }        from '../../components/atoms/ImgLogin';
+import { HeaderForm }      from '../../components/atoms/HeaderForm';
 
 export const LoginScreen = () => {
 
@@ -58,9 +58,10 @@ export const LoginScreen = () => {
             <div>
               <Icono/>
             </div>
-            <HeaderLogin>
-              <h2>Iniciar Sección en Segment</h2>
-            </HeaderLogin>
+            <HeaderForm content="Inicia Sección en Segment"
+                        marginB_20
+            />
+
 
             <InputFormulario estado={ correo }
                              cambiarEstado={ cambiarCorreo }
