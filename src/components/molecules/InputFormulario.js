@@ -5,7 +5,6 @@
  * @param {string} name Titulo del formulario
  * @param {string} type Tipo de Input
  * @param {string} error Mensaje de error
- * @param {string} placeholder Mensaje dentro del Input
  * @param {object} expresionRegular Tipo de expresion regular
  */
 
@@ -21,7 +20,6 @@ export const InputFormulario = ( {
   name,
   type,
   error,
-  placeholder,
   expresionRegular,
 } ) => {
 
@@ -34,7 +32,6 @@ export const InputFormulario = ( {
                cambiarEstado={ cambiarEstado }
                name={ name }
                type={ type }
-               placeholder={ placeholder }
                valido={ estado.valido }
                expresionRegular={ expresionRegular }
 

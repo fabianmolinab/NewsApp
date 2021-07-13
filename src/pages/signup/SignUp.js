@@ -83,7 +83,6 @@ export const SignUp = () => {
   return (
       <>
         <GlobalStyle/>
-
         <ContendorGlobal signup>
 
           <ImgSignup/>
@@ -101,7 +100,6 @@ export const SignUp = () => {
                                name="Nombre de Usuario"
                                type="text"
                                error="No puede llevar espacios, ni acentos"
-                               placeholder="Su nombre de usuario"
                                expresionRegular={ expresiones.nombre }
               />
             </ContenedorGridC2>
@@ -111,7 +109,6 @@ export const SignUp = () => {
                              name="Correo Electronico"
                              type="text"
                              error="Tienes un error en el correo"
-                             placeholder="correo@domino.com"
                              expresionRegular={ expresiones.correo }
             />
 
@@ -120,7 +117,6 @@ export const SignUp = () => {
                              name="Confirma tu correo electronico"
                              type="text"
                              error="Tienes un error en el correo"
-                             placeholder="correo@domino.com"
                              expresionRegular={ expresiones.correo }
             />
 
@@ -129,7 +125,6 @@ export const SignUp = () => {
                              name="Contraseña"
                              type="password"
                              error="Debe tener de 4 a 12 digitos"
-                             placeholder="Digite su contraseña"
                              expresionRegular={ expresiones.password }
             />
 
@@ -138,7 +133,6 @@ export const SignUp = () => {
                              name="Confirma tu Contraseña"
                              type="password"
                              error="Debe tener de 4 a 12 digitos"
-                             placeholder="Contraseña"
                              expresionRegular={ expresiones.password }
             />
             <ContenedorGridC2>

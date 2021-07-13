@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import { colores }           from './colores';
 
 export const GlobalStyle = createGlobalStyle`
+
   &* {
     margin: 0;
     padding: 0;
@@ -11,11 +12,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    font-family: SF UI Text, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
   }
 
   body {

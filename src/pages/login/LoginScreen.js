@@ -5,7 +5,6 @@
 import React, { useState } from 'react';
 
 import { useHistory }      from 'react-router-dom';
-import { GlobalStyle }     from '../../styles/GlobalStyle';
 import {
   ContendorFormulario,
   ContendorGlobal,
@@ -49,7 +48,6 @@ export const LoginScreen = () => {
 
   return (
       <>
-        <GlobalStyle/>
 
         <ContendorGlobal>
           <ImgLogin/>
@@ -68,7 +66,6 @@ export const LoginScreen = () => {
                              name="Correo Electronico"
                              type="text"
                              error="Tienes un error en el correo"
-                             placeholder="correo@domino.com"
                              expresionRegular={ expresiones.correo }
             />
 
@@ -77,7 +74,6 @@ export const LoginScreen = () => {
                              name="Contraseña"
                              type="password"
                              error="Tienes un error en la contraseña"
-                             placeholder="Contraseña"
                              expresionRegular={ expresiones.password }
             />
             <ContenedorFlex>

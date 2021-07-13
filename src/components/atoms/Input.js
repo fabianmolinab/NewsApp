@@ -60,9 +60,8 @@ export const Input = ( {
 const InputStyles = styled.input`
   display: block;
   width: 90%;
-  max-width: 95%;
   margin-top: 10px;
-  padding: 10px;
+  padding: 7px;
   font-size: 16px;
   border: 1.5px solid #000;
   border-radius: 8px;
