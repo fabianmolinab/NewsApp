@@ -16,11 +16,8 @@ const ContendorGlobal = styled.div`
   //Estilos para el signup || La pagina de registrate || Hay que colocar esa propiedad para que se active
 
   ${ props => props.signup && css`
-    display: block;
+    display: flex;
 
-    @media ${ device.tablet } {
-      max-width: 700px;
-    };
   ` }
 `;
 

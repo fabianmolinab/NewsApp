@@ -1,20 +1,31 @@
 import styled, { css } from 'styled-components';
 import { colores }     from '../../styles/colores';
 
-const ContenedorSignup = styled.form`
+const FormGrid = styled.form`
+  height: 600px;
+  width: 60%;
   margin-top: 100px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
 `;
 
-//Contenedor de el nombre en el formulario de Signup
-const ContenedorName = styled.div`
+//Contenedor Grid que ocupa (2fr-column)
+const ContenedorGridC2 = styled.div`
   grid-column: span 2;
 
-  input {
-    width: 100%;
-  }
+  ${ props => props.input && css`
+    input {
+      width: 100%;
+    }
+  ` }
+
+  ${ props => props.flex && css`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  ` }
 `;
 
 /*Estilos para mostrar o no el mensaje enviado,
@@ -39,7 +50,7 @@ const RegistroEnviado = styled.p`
 `;
 
 export {
-  ContenedorSignup,
-  ContenedorName,
+  FormGrid,
+  ContenedorGridC2,
   RegistroEnviado,
 };

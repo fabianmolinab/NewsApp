@@ -9,12 +9,15 @@ import { ContendorGlobal } from '../login/LoginStyles';
 import { InputFormulario } from '../../components/molecules/InputFormulario';
 import { expresiones }     from '../../const/expresionesRegulares';
 import {
-  ContenedorName,
-  ContenedorSignup,
+  ContenedorGridC2,
+  FormGrid,
   RegistroEnviado,
 }                          from './SignUpStyles';
 import { Botton }          from '../../components/atoms/Botton';
 import { InputCheckbox }   from '../../components/atoms/InputCheckbox';
+import { HeaderForm }      from '../../components/atoms/HeaderForm';
+import { Logo }            from '../../components/atoms/Logo';
+import { ImgSignup }       from '../../components/atoms/ImgSignup';
 
 export const SignUp = () => {
 
@@ -83,13 +86,16 @@ export const SignUp = () => {
 
         <ContendorGlobal signup>
 
-          <ContenedorSignup onSubmit={ handleLogin }>
+          <ImgSignup/>
 
-            <header>
-              Registrate en Segment
-            </header>
+          <FormGrid onSubmit={ handleLogin }>
 
-            <ContenedorName>
+            <ContenedorGridC2 flex>
+              <Logo grid/>
+              <HeaderForm content="Registrate en Segment" grid/>
+            </ContenedorGridC2>
+
+            <ContenedorGridC2>
               <InputFormulario estado={ nombre }
                                cambiarEstado={ cambiarNombre }
                                name="Nombre de Usuario"
@@ -98,7 +104,7 @@ export const SignUp = () => {
                                placeholder="Su nombre de usuario"
                                expresionRegular={ expresiones.nombre }
               />
-            </ContenedorName>
+            </ContenedorGridC2>
 
             <InputFormulario estado={ correo1 }
                              cambiarEstado={ cambiarCorreo1 }
@@ -123,7 +129,7 @@ export const SignUp = () => {
                              name="Contraseña"
                              type="password"
                              error="Debe tener de 4 a 12 digitos"
-                             placeholder="Contraseña"
+                             placeholder="Digite su contraseña"
                              expresionRegular={ expresiones.password }
             />
 
@@ -135,49 +141,53 @@ export const SignUp = () => {
                              placeholder="Contraseña"
                              expresionRegular={ expresiones.password }
             />
+            <ContenedorGridC2>
+              <InputCheckbox estado={ terminos }
+                             cambiarEstado={ cambiarTerminos }
+                             id="condiciones"
+              />
+              <label htmlFor="condiciones">Esta de acuerdo con la politica
+                de <Link to="/terminos">Terminos
+                  y condiciones</Link>
+              </label>
+            </ContenedorGridC2>
+
             <Botton type="submit" nombre="Crear Cuenta"/>
-          </ContenedorSignup>
 
-          <div>
-            <InputCheckbox estado={ terminos }
-                           cambiarEstado={ cambiarTerminos }
-                           id="condiciones"
-            />
-            <label htmlFor="condiciones">Esta de acuerdo con la politica
-              de <Link to="/terminos">Terminos
-                y condiciones</Link>
-            </label>
-          </div>
+            <p>¿Ya tienes una cuenta? <a>Inicia Sección</a></p>
 
+            <div>
+              {
+                ( mensajeConfirmacion.correcto === 'true' &&
+                    mensajeConfirmacion.fallido === 'false' )
+                    ?
 
-          <div>
-            {
-              ( mensajeConfirmacion.correcto === 'true' &&
-                  mensajeConfirmacion.fallido === 'false' )
-                  ?
+                    <RegistroEnviado mensaje={ mensajeConfirmacion.correcto }>
+                      Un mensaje fue enviado a su email para confirmar el
+                      registro
+                    </RegistroEnviado>
 
-                  <RegistroEnviado mensaje={ mensajeConfirmacion.correcto }>
-                    Un mensaje fue enviado a su email para confirmar el registro
-                  </RegistroEnviado>
+                    : ( mensajeConfirmacion.correcto === 'false' &&
+                    mensajeConfirmacion.fallido === 'true' )
+                    ?
 
-                  : ( mensajeConfirmacion.correcto === 'false' &&
-                  mensajeConfirmacion.fallido === 'true' )
-                  ?
+                    <RegistroEnviado mensaje={ mensajeConfirmacion.fallido }
+                                     fallido>
+                      Le falto alguno de los cambios
+                    </RegistroEnviado>
 
-                  <RegistroEnviado mensaje={ mensajeConfirmacion.fallido }
-                                   fallido>
-                    Le falto alguno de los cambios
-                  </RegistroEnviado>
+                    :
+                    <RegistroEnviado mensaje={ mensajeConfirmacion.fallido }
+                                     fallido/>
 
-                  :
-                  <RegistroEnviado mensaje={ mensajeConfirmacion.fallido }
-                                   fallido/>
+              }
+            </div>
 
-            }
-          </div>
-          <p>¿Ya tienes una cuenta? <a>Inicia Sección</a></p>
+          </FormGrid>
+
 
         </ContendorGlobal>
+
       </>
   )
       ;

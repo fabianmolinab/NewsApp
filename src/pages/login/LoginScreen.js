@@ -15,7 +15,7 @@ import { ButtonGradient }  from '../../components/atoms/ButtonGradient';
 import { Botton }          from '../../components/atoms/Botton';
 import { InputFormulario } from '../../components/molecules/InputFormulario';
 import { expresiones }     from '../../const/expresionesRegulares';
-import { Icono }           from '../../components/atoms/Icono';
+import { Logo }            from '../../components/atoms/Logo';
 import { ImgLogin }        from '../../components/atoms/ImgLogin';
 import { HeaderForm }      from '../../components/atoms/HeaderForm';
 
@@ -56,10 +56,10 @@ export const LoginScreen = () => {
 
           <ContendorFormulario onSubmit={ handleLogin }>
             <div>
-              <Icono/>
+              <Logo/>
             </div>
             <HeaderForm content="Inicia Sección en Segment"
-                        marginB_20
+                        marginB_30
             />
 
 

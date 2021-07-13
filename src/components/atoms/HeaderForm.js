@@ -6,19 +6,20 @@
 import React           from 'react';
 import styled, { css } from 'styled-components';
 
-export const HeaderForm = ( { content, marginB_20 } ) => {
+export const HeaderForm = ( { content, marginB_30 } ) => {
   return (
-      <Header marginB_20={ marginB_20 }>
-        { content }
+      <Header marginB_30={ marginB_30 }>
+        <h2>{ content } </h2>
       </Header>
   );
 };
 
-const Header = styled.h2`
+const Header = styled.header`
   text-align: center;
   box-sizing: border-box;
 
-  ${ props => props.marginB_20 && css`
-    margin-bottom: 20px;
+  ${ props => props.marginB_30 && css`
+    margin-bottom: 30px;
   ` }
+
 `;
