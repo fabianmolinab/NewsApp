@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { colores }           from './colores';
+import { colores } from './colores';
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${ colores.blanco };
-    color: ${ colores.textoNegro };
+    background-color: ${colores.blanco};
+    color: ${colores.textoNegro};
   }
 `;

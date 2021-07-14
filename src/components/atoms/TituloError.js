@@ -3,14 +3,14 @@
  * @param {string} valido Muestra o no el mensaje
  * @param {string} error Contenido del mensaje
  * */
-import React           from 'react';
+import React from 'react';
 import styled, { css } from 'styled-components';
 
-export const TituloError = ( { valido, error } ) => {
+export const TituloError = ({ valido, error }) => {
   return (
-      <ParrafoError valido={ valido }>
-        { error }
-      </ParrafoError>
+    <ParrafoError valido={valido}>
+      {error}
+    </ParrafoError>
   );
 };
 
@@ -25,10 +25,10 @@ const ParrafoError = styled.p`
   padding: 0 5px 0 10px;
   border-radius: 8px;
 
-  ${ props => props.valido === 'true' && css`
+  ${props => props.valido === 'true' && css`
     display: none;
   ` }
-  ${ props => props.valido === 'false' && css`
+  ${props => props.valido === 'false' && css`
     display: block;
   ` }
 `;

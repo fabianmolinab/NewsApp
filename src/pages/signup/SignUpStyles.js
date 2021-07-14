@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { colores }     from '../../styles/colores';
+import { colores } from '../../styles/colores';
 
 const FormGrid = styled.form`
   height: 600px;
@@ -14,13 +14,13 @@ const FormGrid = styled.form`
 const ContenedorGridC2 = styled.div`
   grid-column: span 2;
 
-  ${ props => props.input && css`
+  ${props => props.input && css`
     input {
       width: 100%;
     }
   ` }
 
-  ${ props => props.flex && css`
+  ${props => props.flex && css`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,14 +37,14 @@ const RegistroEnviado = styled.p`
   font-size: 17px;
   font-weight: 600;
 
-  ${ props => props.mensaje === 'true' && css`
+  ${props => props.mensaje === 'true' && css`
     display: block;
   ` }
-  ${ props => props.mensaje === 'false' && css`
+  ${props => props.mensaje === 'false' && css`
     display: none;
   ` }
-  ${ props => props.fallido && css`
-    color: ${ colores.rojo };
+  ${props => props.fallido && css`
+    color: ${colores.rojo};
   ` }
 
 `;

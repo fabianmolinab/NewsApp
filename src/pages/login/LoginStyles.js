@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { device }      from '../../const/device.js';
+import { device } from '../../const/device.js';
 
 const ContendorGlobal = styled.div`
   display: flex;
@@ -8,14 +8,14 @@ const ContendorGlobal = styled.div`
   margin: 0 auto;
   height: 100%;
 
-  @media ${ device.tablet } {
+  @media ${device.tablet} {
     flex-direction: row;
     max-width: 1000px;
   };
 
   //Estilos para el signup || La pagina de registrate || Hay que colocar esa propiedad para que se active
 
-  ${ props => props.signup && css`
+  ${props => props.signup && css`
     display: flex;
 
   ` }
@@ -35,7 +35,7 @@ const ContendorFormulario = styled.form`
   height: 600px;
   width: 49.5%;
 
-  @media ${ device.mobileS } {
+  @media ${device.mobileS} {
     width: 80%;
   };
 `;
