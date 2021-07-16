@@ -10,14 +10,17 @@ const ContendorGlobal = styled.div`
 
   @media ${device.tablet} {
     flex-direction: row;
-    max-width: 1000px;
+    max-width: 800px;
   };
 
   //Estilos para el signup || La pagina de registrate || Hay que colocar esa propiedad para que se active
 
   ${props => props.signup && css`
-    display: flex;
 
+    @media ${device.tablet} {
+    flex-direction: row;
+    max-width: 1000px;
+  };
   ` }
 `;
 
@@ -33,7 +36,7 @@ const ContendorFormulario = styled.form`
   justify-content: center;
   align-items: center;
   height: 600px;
-  width: 49.5%;
+  width: 40.5%;
 
   @media ${device.mobileS} {
     width: 80%;

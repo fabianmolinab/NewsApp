@@ -20,7 +20,7 @@ const Img = styled.img`
     display: none;
   };
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     display: block;
   };
 

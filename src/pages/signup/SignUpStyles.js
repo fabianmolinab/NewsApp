@@ -2,20 +2,25 @@ import styled, { css } from 'styled-components';
 import { colores } from '../../styles/colores';
 
 const FormGrid = styled.form`
-  height: 600px;
+  height: 100%;
   width: 60%;
-  margin-top: 100px;
+  margin: 100px 10px 0 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  //grid-template-rows: repeat(4, 80px);
+  gap: 10px 20px;
 `;
 
-//Contenedor Grid que ocupa (2fr-column)
+//Contenedor Grid que ocupa (2fr-column) 
+//Propiedad Flex es display flex
 const ContenedorGridC2 = styled.div`
   grid-column: span 2;
 
   ${props => props.input && css`
     input {
+      width: 100%;
+    }
+    label{
       width: 100%;
     }
   ` }
@@ -46,7 +51,6 @@ const RegistroEnviado = styled.p`
   ${props => props.fallido && css`
     color: ${colores.rojo};
   ` }
-
 `;
 
 export {

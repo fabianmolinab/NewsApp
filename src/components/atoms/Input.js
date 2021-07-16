@@ -3,7 +3,7 @@
  * @param {function} cambiarEstado Cambia el estado del input
  * @param {string} name Titulo del formulario
  * @param {string} type Tipo de Input
- *  @param {string} valido Cambiar el color del borde de el formulario
+ * @param {string} valido Cambiar el color del borde de el formulario
  *
  * */
 import React from 'react';
@@ -17,7 +17,6 @@ export const Input = ({
   type,
   valido,
   expresionRegular,
-  login,
 }) => {
 
   const onChange = ({ target }) => {
@@ -51,18 +50,14 @@ export const Input = ({
       onBlur={validacion}
       valido={valido}
       name={name}
-      login={login}
-
     />
   );
 };
 
 const InputStyles = styled.input`
   display: block;
-  width: 90%;
-  margin-top: 10px;
-  padding: 7px;
-  font-size: 16px;
+  width: 85%;
+  padding: 6px;
   border: 1.5px solid #000;
   border-radius: 8px;
   background-color: ${colores.blanco};
@@ -73,10 +68,6 @@ const InputStyles = styled.input`
   ` }
   ${props => props.valido === 'false' && css`
     border: 1.5px solid ${colores.rojo} !important;
-  ` }
-
-  ${props => props.login && css`
-    width: 70%;
   ` }
 `;
 

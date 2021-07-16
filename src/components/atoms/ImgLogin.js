@@ -5,13 +5,14 @@ import { device } from '../../const/device';
 export const ImgLogin = () => {
   return (
     <Img alt="Imagen Login"
-      src="./assets/imgs/imagen-login.svg" />
+      src="./assets/imgs/imagen-login.svg"
+    />
   );
 };
 
 const Img = styled.img`
   height: 600px;
-  width: 49.5%;
+  width: 59.5%;
   order: 0;
 
   //La imagen no aparece en mobile

@@ -19,11 +19,10 @@ const ParrafoError = styled.p`
   height: 50px;
   width: 90%;
   color: red;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
-  margin: 10px 0 5px 0;
-  padding: 0 5px 0 10px;
-  border-radius: 8px;
+  margin: 0;
+  padding: 0 5px;
 
   ${props => props.valido === 'true' && css`
     display: none;

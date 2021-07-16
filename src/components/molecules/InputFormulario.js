@@ -9,7 +9,7 @@
  */
 
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Input } from '../atoms/Input';
 import { LabelInput } from '../atoms/LabelInput';
 import { TituloError } from '../atoms/TituloError';
@@ -21,7 +21,6 @@ export const InputFormulario = ({
   type,
   error,
   expresionRegular,
-  login,
 }) => {
 
   return (
@@ -38,7 +37,6 @@ export const InputFormulario = ({
         type={type}
         valido={estado.valido}
         expresionRegular={expresionRegular}
-        login={login}
       />
 
       <TituloError valido={estado.valido}
@@ -49,10 +47,17 @@ export const InputFormulario = ({
 };
 
 const ContenedorInput = styled.div`
+  display: flex;
   width: 100%;
   height: 100px;
   flex-direction: column;
+  align-items: center;
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 10px;
+  //margin-bottom: 10px;
+
+  ${props => props.signup && css`
+    display: block;
+    background-color: red;
+  ` }
 `;

@@ -16,9 +16,12 @@ export const LabelInput = ({ color, name }) => {
 };
 
 const Label = styled.label`
-  color: black;
-  margin: 10px 0 5px 0;
-  font-weight: 600;
+  display: block;
+  width: 85%;
+	font-weight: 700;
+	padding: 10px 10px 5px 5px;
+	min-height: 40px;
+	cursor: pointer;
 
   ${props => props.color === 'true' && css`
     color: ${colores.verdeOscuro} !important;

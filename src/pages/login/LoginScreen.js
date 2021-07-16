@@ -61,16 +61,17 @@ export const LoginScreen = () => {
           />
 
 
-          <InputFormulario estado={correo}
+          <InputFormulario
+            estado={correo}
             cambiarEstado={cambiarCorreo}
             name="Correo Electronico"
             type="text"
             error="Tienes un error en el correo"
             expresionRegular={expresiones.correo}
-            login
           />
 
-          <InputFormulario estado={password}
+          <InputFormulario
+            estado={password}
             cambiarEstado={cambiarPassword}
             name="Contraseña"
             type="password"
@@ -78,13 +79,13 @@ export const LoginScreen = () => {
             expresionRegular={expresiones.password}
           />
           <ContenedorFlex>
-            <ButtonGradient type="submit"
+            <ButtonGradient
+              type="submit"
               nombre="Iniciar Sección" />
 
             <Botton onClick={handleSignUp} nombre="Crea una Cuenta" />
           </ContenedorFlex>
         </ContendorFormulario>
-
       </ContendorGlobal>
     </>
   );
