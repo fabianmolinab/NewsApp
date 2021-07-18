@@ -2,14 +2,15 @@
  * Componente boton estandar
  * @param {function} onClick Accion despues del click
  * @param {string} nombre Contenido del boton
+ * @param {object} largeV Propiedad para hacer el botton mas ancho y verde 
  * */
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { colores } from '../../styles/colores';
 
-export const Botton = ({ onClick, nombre, type }) => {
+export const Botton = ({ onClick, nombre, type, largeV }) => {
   return (
-    <BottonStyles onClick={onClick} type={type}>
+    <BottonStyles onClick={onClick} type={type} largeV={largeV}>
       {nombre}
     </BottonStyles>
   );
@@ -32,4 +33,11 @@ export const BottonStyles = styled.button`
     border-width: medium;
     transform: scale(1, 1.1);
   }
+  
+  ${props => props.largeV && css`
+    width: 200px;
+    margin: 10px auto;
+    background: ${colores.verde};
+    color: ${colores.blanco};
+  `}
 `;

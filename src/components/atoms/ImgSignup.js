@@ -10,19 +10,19 @@ export const ImgSignup = () => {
 };
 
 const Img = styled.img`
-  height: 600px;
-  width: 40%;
-  order: 1;
-  background-color: ${colores.blanco};
-
   //La imagen no aparece en mobile
-  @media ${device.mobileS} {
-    display: none;
-  };
+  display: none;
 
-  @media ${device.laptop} {
+  @media ${device.tablet} {
     display: block;
+    height: 40%;
+    width: 39.5%;
+    margin-top: 20px;
+    order: 1;
   };
-
+  @media ${device.desktop}{
+    height: 600px;
+    background-color: ${colores.blanco};
+  }
 `;
 

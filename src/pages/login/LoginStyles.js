@@ -21,6 +21,10 @@ const ContendorGlobal = styled.div`
     flex-direction: row;
     max-width: 1000px;
   };
+
+  @media ${device.desktop} {
+    flex-direction: row;
+  };
   ` }
 `;
 

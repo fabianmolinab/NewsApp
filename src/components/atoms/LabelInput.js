@@ -17,10 +17,10 @@ export const LabelInput = ({ color, name }) => {
 
 const Label = styled.label`
   display: block;
-  width: 85%;
+  width: 100%;
 	font-weight: 700;
-	padding: 10px 10px 5px 5px;
-	min-height: 40px;
+	//padding: 10px 10px 5px 5px;
+	min-height: 20px;
 	cursor: pointer;
 
   ${props => props.color === 'true' && css`

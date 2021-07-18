@@ -61,7 +61,7 @@ const InputStyles = styled.input`
   border: 1.5px solid #000;
   border-radius: 8px;
   background-color: ${colores.blanco};
-
+  
   /*La propiedad valido cambiar el color del borde del input*/
   ${props => props.valido === 'true' && css`
     border: 1.5px solid ${colores.verde} !important;

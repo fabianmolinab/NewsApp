@@ -6,6 +6,7 @@
  * @param {string} type Tipo de Input
  * @param {string} error Mensaje de error
  * @param {object} expresionRegular Tipo de expresion regular
+ * @param {props} signup Es una propiedad de estilos propios en la pagina signup
  */
 
 import React from 'react';
@@ -21,10 +22,11 @@ export const InputFormulario = ({
   type,
   error,
   expresionRegular,
+  signup
 }) => {
 
   return (
-    <ContenedorInput>
+    <ContenedorInput signup={signup}>
       <LabelInput
         color={estado.valido}
         name={name}
@@ -52,12 +54,17 @@ const ContenedorInput = styled.div`
   height: 100px;
   flex-direction: column;
   align-items: center;
-  font-size: 18px;
-  font-weight: 600;
-  //margin-bottom: 10px;
-
+  
   ${props => props.signup && css`
-    display: block;
-    background-color: red;
+    //display: block;
+    height: 90px;
+    label {
+      width: 100%;
+      margin-top: 15px;
+    }
+    input{
+      width: 100%;
+    }
+    
   ` }
 `;

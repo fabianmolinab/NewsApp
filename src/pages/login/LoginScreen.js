@@ -81,7 +81,8 @@ export const LoginScreen = () => {
           <ContenedorFlex>
             <ButtonGradient
               type="submit"
-              nombre="Iniciar Sección" />
+              nombre="Iniciar Sección"
+            />
 
             <Botton onClick={handleSignUp} nombre="Crea una Cuenta" />
           </ContenedorFlex>
