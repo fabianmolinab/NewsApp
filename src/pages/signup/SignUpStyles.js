@@ -5,22 +5,19 @@ import { colores } from '../../styles/colores';
 const FormGrid = styled.form`
     display: flex;
     flex-direction: column;
-    //width: 100%;
-    //margin: 10px;
     padding: 25px;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px;
-    font-size: 16px;
 
   @media ${device.tablet} {
+    //display: grid;
     width: 60.5%;
     height: 100%;
-    grid-template-columns: 1fr;
-    column-gap: 20px;
+    margin-top: 20px;
   }
 
-  @media ${device.desktop} {
-    width: 60%;
+  @media ${device.laptop} {
+    width: 60.5%;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr) ;
     margin: 100px 10px 0 0;
     column-gap: 10px;
   }
@@ -29,9 +26,8 @@ const FormGrid = styled.form`
 //Contenedor Grid que ocupa (2fr-column) 
 //Propiedad Flex es display flex
 const ContenedorGridC2 = styled.div`
-  grid-column: span 1;
-
-  @media ${device.tablet} {
+  
+  @media ${device.laptop} {
     grid-column: span 2;
   }
 

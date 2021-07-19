@@ -165,7 +165,7 @@ export const SignUp = () => {
           </ContenedorGridC2>
 
           <ContenedorGridC2 paddT_15>
-            <p>¿Ya tienes una cuenta? <Link>Inicia Sección</Link></p>
+            <p>¿Ya tienes una cuenta? <Link to="/login">Inicia Sección</Link></p>
           </ContenedorGridC2>
 
         </FormGrid>

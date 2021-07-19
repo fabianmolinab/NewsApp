@@ -15,9 +15,8 @@ const Img = styled.img`
 
   @media ${device.tablet} {
     display: block;
-    height: 40%;
-    width: 39.5%;
-    margin-top: 20px;
+    height: 600px;
+    width: 50%;
     order: 1;
   };
   @media ${device.desktop}{

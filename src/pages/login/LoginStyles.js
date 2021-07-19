@@ -18,12 +18,12 @@ const ContendorGlobal = styled.div`
   ${props => props.signup && css`
 
     @media ${device.tablet} {
-    flex-direction: row;
-    max-width: 1000px;
+      max-width: 800px;
+      align-items: flex-start;
   };
 
-  @media ${device.desktop} {
-    flex-direction: row;
+  @media ${device.laptop} {
+    max-width: 1000px;
   };
   ` }
 `;
