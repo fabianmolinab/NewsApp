@@ -60,7 +60,6 @@ export const LoginScreen = () => {
             marginB_30
           />
 
-
           <InputFormulario
             estado={correo}
             cambiarEstado={cambiarCorreo}

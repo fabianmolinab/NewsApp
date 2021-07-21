@@ -51,13 +51,11 @@ export const InputFormulario = ({
 const ContenedorInput = styled.div`
   display: flex;
   width: 100%;
-  height: 100px;
   flex-direction: column;
-  align-items: center;
+  margin-bottom: 15px;
   
   ${props => props.signup && css`
-    //display: block;
-    height: 90px;
+    align-items: center;
     label {
       width: 100%;
       margin-top: 15px;
@@ -65,6 +63,5 @@ const ContenedorInput = styled.div`
     input{
       width: 100%;
     }
-    
   ` }
 `;

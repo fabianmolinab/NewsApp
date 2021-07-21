@@ -5,6 +5,7 @@
  * */
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { colores } from '../../styles/colores';
 
 export const TituloError = ({ valido, error }) => {
   return (
@@ -16,9 +17,8 @@ export const TituloError = ({ valido, error }) => {
 
 const ParrafoError = styled.p`
   display: none;
-  height: 50px;
   width: 90%;
-  color: red;
+  color: ${colores.rojo};
   font-weight: 600;
   margin-top: 5px ;
 
