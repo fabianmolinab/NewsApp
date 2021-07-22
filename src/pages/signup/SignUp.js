@@ -13,10 +13,7 @@ import { InputFormulario } from '../../components/molecules/InputFormulario';
 import { expresiones } from '../../const/expresionesRegulares';
 import { GlobalStyle } from '../../styles/GlobalStyle';
 import { ContendorGlobal } from '../login/LoginStyles';
-import {
-  ContenedorGridC2,
-  FormGrid
-} from './SignUpStyles';
+import { ContenedorGridC2, FormGrid } from './SignUpStyles';
 
 export const SignUp = () => {
 
@@ -36,7 +33,6 @@ export const SignUp = () => {
     campo: '', valido: null,
   });
 
-  //Hook que cambia el estado del checkbox de terminos y condiciones
   const [terminos, cambiarTerminos] = useState({ checked: false });
 
   /** Hook que cambia el estado para mostrar o no aviso despues del envio de el formulario
@@ -49,7 +45,6 @@ export const SignUp = () => {
     correcto: 'false', fallido: 'false',
   });
 
-  //Validaciones de todos los campos del formulario
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -95,7 +90,7 @@ export const SignUp = () => {
             />
           </ContenedorGridC2>
 
-          <ContenedorGridC2 >
+          <ContenedorGridC2>
             <InputFormulario
               estado={nombre}
               cambiarEstado={cambiarNombre}
@@ -153,7 +148,8 @@ export const SignUp = () => {
               id="condiciones"
             />
             <label htmlFor="condiciones">
-              Esta de acuerdo con la politica de <Link to="/terminos">Terminos y condiciones</Link>
+              Esta de acuerdo con la politica de <Link to="/terminos">Terminos
+                y condiciones</Link>
             </label>
           </ContenedorGridC2>
 
@@ -165,13 +161,14 @@ export const SignUp = () => {
           </ContenedorGridC2>
 
           <ContenedorGridC2 paddT_15>
-            <p>¿Ya tienes una cuenta? <Link to="/login">Inicia Sección</Link></p>
+            <p>¿Ya tienes una cuenta? <Link to="/login">Inicia Sección</Link>
+            </p>
           </ContenedorGridC2>
 
         </FormGrid>
       </ContendorGlobal>
 
     </>
-  )
-    ;
+  );
+
 };

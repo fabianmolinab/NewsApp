@@ -49,6 +49,7 @@ const ContendorFormulario = styled.form`
 
 const ContenedorFlex = styled.div`
   display: flex;
+  margin: 0 auto;
   margin-top: 15px;
 `;
 

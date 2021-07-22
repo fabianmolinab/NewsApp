@@ -32,7 +32,7 @@ const Bg = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: ${colores.blanco};
   z-index: 2;
   transform: scale(1.05, 1.2);
   border-radius: 10px;

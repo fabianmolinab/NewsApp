@@ -20,11 +20,11 @@ export const BottonStyles = styled.button`
   width: 150px;
   height: 40px;
   margin-left: 20px;
-  font-weight: 600;
-  background: ${colores.blanco};
+  font-weight: 700;
+  background: ${colores.verde};
   border: 1.5px solid ${colores.verde};
   cursor: pointer;
-  color: ${colores.verde};
+  color: ${colores.blanco};
   transition: all .4s;
   border-radius: 8px;
 
