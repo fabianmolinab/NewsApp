@@ -1,23 +1,32 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import { NavLink } from 'react-router-dom';
 
 export const NavBar = () => {
   return (
 
-    <nav>
-      <NavLink to="/blog/nuevo">
-        Lo nuevo
-      </NavLink>
+      <nav>
+        <Nav to="/blog/nuevo">
+          Lo nuevo
+        </Nav>
 
-      <NavLink to="/blog/destacado">
-        Destacado
-      </NavLink>
+        <Nav to="/blog/destacado">
+          Destacado
+        </Nav>
 
-      <NavLink to="/blog/podcasts/">
-        Podcasts
-      </NavLink>
+        <Nav to="/blog/podcasts/">
+          Podcasts
+        </Nav>
 
-    </nav>
+      </nav>
   );
 };
+
+const Nav = styled (NavLink)`
+  display: flex;
+
+
+
+`;
 
