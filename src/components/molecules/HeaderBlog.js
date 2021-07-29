@@ -1,10 +1,15 @@
+/**
+ * Componente de Header del Blog
+ * */
+
 import React from 'react';
 import styled from 'styled-components';
 
 import { Logo } from '../atoms/Logo';
 import { NavBar } from '../atoms/NavBar';
 import { InputBusqueda } from '../atoms/InputBusqueda';
-import { IconoMenu } from '../atoms/IconoMenu';
+import { NavHamburguesa } from '../atoms/NavHamburguesa';
+import { colores } from '../../styles/colores';
 
 export const HeaderBlog = () => {
   return (
@@ -12,11 +17,15 @@ export const HeaderBlog = () => {
         <Logo grid/>
         <NavBar/>
         <InputBusqueda/>
-        <IconoMenu/>
+        <NavHamburguesa/>
       </ContenedorHeader>
   );
 };
 
 const ContenedorHeader = styled.header`
   display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  height: 60px;
+  background-color: ${ colores.marronClaro };
 `;

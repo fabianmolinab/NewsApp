@@ -1,11 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
-
+import styled, { css } from 'styled-components';
 import { device } from '../../const/device';
 
-export const InputBusqueda = () => {
+export const InputBusqueda = ( {menuNav} ) => {
   return (
-      <Input/>
+      <Input menuNav={ menuNav }/>
   );
 };
 
@@ -13,9 +12,17 @@ const Input = styled.input`
 
   display: none;
 
-  @media ${ device.tablet } {
+  @media ${ device.laptop } {
     display: block;
   }
+
+  ${ props => props.menuNav && css`
+    display: block;
+
+    @media ${ device.laptop } {
+      display: none;
+    }
+  ` }
 
 `;
 

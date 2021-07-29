@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { colores } from './colores';
+import { fonts } from './fonts';
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -12,12 +13,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    font-family: 'Quicksand', sans-serif;
+    font-family: ${ fonts.regular };
     font-size: 16px;
   }
 
   body {
-    background-color: ${colores.blanco};
-    color: ${colores.textoNegro};
+    background-color: ${ colores.blanco };
+    color: ${ colores.textoNegro };
   }
 `;

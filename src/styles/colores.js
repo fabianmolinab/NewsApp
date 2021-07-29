@@ -10,5 +10,7 @@ export const colores = {
   verdeIntenso: '#5df54c',
   textoNegro: '#060606',
   blanco: '#F3EAD3',
+  marronClaro: '#DBCCB4',
+  marronOscuro: '#5C4B30',
   rojo: '#ff2d2d',
 };
