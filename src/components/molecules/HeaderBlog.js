@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import { Logo } from '../atoms/Logo';
 import { NavBar } from '../atoms/NavBar';
 import { InputBusqueda } from '../atoms/InputBusqueda';
-import { NavHamburguesa } from '../atoms/NavHamburguesa';
+import { IconHamburguesa } from '../atoms/IconHamburguesa';
 import { colores } from '../../styles/colores';
 
 export const HeaderBlog = () => {
@@ -17,7 +17,7 @@ export const HeaderBlog = () => {
         <Logo grid/>
         <NavBar/>
         <InputBusqueda/>
-        <NavHamburguesa/>
+        <IconHamburguesa/>
       </ContenedorHeader>
   );
 };

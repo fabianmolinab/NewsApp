@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { colores } from '../../styles/colores';
 
-export const NavHamburguesa = () => {
+export const IconHamburguesa = () => {
   return (
 
       <Botton>

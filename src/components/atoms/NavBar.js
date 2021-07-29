@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 import { NavLink } from 'react-router-dom';
 import { colores } from '../../styles/colores';
-import { fonts, fontSize } from '../../styles/fonts';
+import { fontSize } from '../../styles/fonts';
 import { InputBusqueda } from './InputBusqueda';
 
 export const NavBar = () => {
@@ -38,7 +38,6 @@ const ContenedorNav = styled.nav`
   align-items: center;
   background-color: ${ colores.marronOscuro };
   color: ${ colores.blanco };
-  font-family: ${ fonts.title };
   padding: 20px 0;
   position: fixed;
   left: 0;
@@ -63,7 +62,7 @@ const Nav = styled (NavLink)`
   text-decoration: none;
 
   &:hover {
-    color: ${ colores.marronClaro }
+    color: ${ colores.marronClaro };
   }
 `;
 
