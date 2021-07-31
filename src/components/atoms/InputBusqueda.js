@@ -1,8 +1,12 @@
-/*
+/**
+ *Componente de busqueda de Blogs
  *
- * **/
+ * @param {props} menuNav Propiedad que cambia de ubicación el componente dependiendo el ancho de la pantalla
+ * */
+
 import React from 'react';
 import styled, { css } from 'styled-components';
+
 import { device } from '../../const/device';
 import { colores } from '../../styles/colores';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -17,19 +21,15 @@ export const InputBusqueda = ( {menuNav} ) => {
         <Input
             placeholder="Busca un articulo"
         />
-
-
       </ContenedorForm>
-
   );
 };
 
 const ContenedorForm = styled.form`
-
   display: none;
-  max-width: 90%;
+  max-width: 80%;
   background-color: ${ colores.blanco };
-  padding: 8px 16px;
+  padding: 5px 10px;
   margin-top: 15px;
   position: relative;
   border-radius: 8px;
@@ -58,12 +58,10 @@ const ContenedorForm = styled.form`
 `;
 
 const Input = styled.input`
-  //position: absolute;
   width: 90%;
   padding: 6px;
   border: none;
   background-color: ${ colores.blanco };
-
 `;
 
 

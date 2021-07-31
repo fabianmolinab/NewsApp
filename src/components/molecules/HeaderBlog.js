@@ -2,7 +2,7 @@
  * Componente de Header del Blog
  * */
 
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { Logo } from '../atoms/Logo';
@@ -12,20 +12,38 @@ import { IconHamburguesa } from '../atoms/IconHamburguesa';
 import { colores } from '../../styles/colores';
 
 export const HeaderBlog = () => {
+
+  const [menu, cambiarMenu] = useState ({estado: 'false'});
+
   return (
-      <ContenedorHeader>
-        <Logo grid/>
-        <NavBar/>
-        <InputBusqueda/>
-        <IconHamburguesa/>
-      </ContenedorHeader>
+      <ContenedorTotal>
+        <ContenedorHeader>
+          <Logo grid/>
+          <NavBar menu={ menu }
+                  cambiarMenu={ cambiarMenu }
+          />
+          <InputBusqueda/>
+          <IconHamburguesa
+              menu={ menu }
+              cambiarMenu={ cambiarMenu }
+          />
+        </ContenedorHeader>
+      </ContenedorTotal>
   );
 };
+
+const ContenedorTotal = styled.div`
+  background-color: ${ colores.marronClaro };
+
+  //
+`;
 
 const ContenedorHeader = styled.header`
   display: flex;
   padding: 10px;
+  height: 50px;
   justify-content: space-between;
-  height: 60px;
   background-color: ${ colores.marronClaro };
+  max-width: 1200px;
+  margin: 0 auto;
 `;

@@ -2,24 +2,38 @@
  *
  * */
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { NavLink } from 'react-router-dom';
 import { colores } from '../../styles/colores';
 import { fontSize } from '../../styles/fonts';
 import { InputBusqueda } from './InputBusqueda';
 
-export const NavBar = () => {
+export const NavBar = ( {menu, cambiarMenu} ) => {
+  console.log (menu.estado);
+
+  const activeLink = () => {
+
+    if (menu.estado === 'true') {
+
+      cambiarMenu ({
+        ...menu,
+        estado: 'false',
+      });
+    }
+
+  };
+
   return (
 
-      <ContenedorNav>
+      <ContenedorNav menu={ menu.estado }>
         <h3> Menu </h3>
 
-        <Nav to="/blog/nuevo">
+        <Nav to="/blog/nuevo" activeClassName="selected">
           Lo nuevo
         </Nav>
 
-        <Nav to="/blog/destacado">
+        <Nav to="/blog/destacado" isActive={ () => activeLink }>
           Destacado
         </Nav>
 
@@ -32,7 +46,7 @@ export const NavBar = () => {
   );
 };
 
-const ContenedorNav = styled.nav`
+const ContenedorNav = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,8 +54,9 @@ const ContenedorNav = styled.nav`
   color: ${ colores.blanco };
   padding: 20px 0;
   position: fixed;
-  left: 0;
-  top: 60px;
+  left: 100%;
+  transition: left 0.3s;
+  top: 50px;
   bottom: 0;
   right: 0;
   z-index: 102;
@@ -52,6 +67,10 @@ const ContenedorNav = styled.nav`
     font-size: ${ fontSize.menu };
     margin-bottom: 10px;
   }
+
+  ${ props => props.menu === 'true' && css`
+    left: 0;
+  ` }
 `;
 
 const Nav = styled (NavLink)`
@@ -63,6 +82,10 @@ const Nav = styled (NavLink)`
 
   &:hover {
     color: ${ colores.marronClaro };
+  }
+
+  selected {
+    color: red;
   }
 `;
 
