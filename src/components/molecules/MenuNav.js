@@ -2,43 +2,44 @@
  * Menu de Navegación de la aplicación principal
  * @param {object} menu valor del estado para desplegar o no el menu (mobile)
  * @param {function} cambiarMenu cambia el estado para deplegar o no el menu (mobile)
- * @param {function} desaparecerMenu cambia el estado para quitar el menu (mobile) cuando se click algun {nav}
+ *
  * */
 import React from 'react';
 import styled, { css } from 'styled-components';
-
-import { NavLink } from 'react-router-dom';
-import { colores } from '../../styles/colores';
-import { fontSize } from '../../styles/fonts';
+import { colores } from '../../const/colores';
 import { InputBusqueda } from '../atoms/InputBusqueda';
+import { device } from '../../const/device';
+import { Nav } from '../atoms/Nav';
 
 export const MenuNav = ( {menu, cambiarMenu} ) => {
-
-  const desaparecerMenu = () => {
-    if (menu.estado === 'true') {
-      cambiarMenu ({
-        ...menu,
-        estado: 'false',
-      });
-    }
-  };
 
   return (
 
       <ContenedorNav menu={ menu.estado }>
-        <h3> Menu </h3>
 
-        <Nav to="/blog/nuevo" onClick={ desaparecerMenu }>
-          Lo nuevo
-        </Nav>
+        <Nav estado={ menu }
+             cambiarEstado={ cambiarMenu }
+             nombre="Lo nuevo"
+             to="/blog/nuevo"
+        />
 
-        <Nav to="/blog/destacado" onClick={ desaparecerMenu }>
-          Destacado
-        </Nav>
+        <Nav estado={ menu }
+             cambiarEstado={ cambiarMenu }
+             nombre="Destacado"
+             to="/blog/destacado"
+        />
 
-        <Nav to="/blog/podcasts/" onClick={ desaparecerMenu }>
-          Podcasts
-        </Nav>
+        <Nav estado={ menu }
+             cambiarEstado={ cambiarMenu }
+             nombre="Podcasts"
+             to="/blog/podcasts"
+        />
+
+        <Nav estado={ menu }
+             cambiarEstado={ cambiarMenu }
+             nombre="Videos"
+             to="/blog/videos"
+        />
 
         <InputBusqueda menuNav/>
       </ContenedorNav>
@@ -62,31 +63,22 @@ const ContenedorNav = styled.div`
   font-size: 20px;
   overflow-y: auto;
 
-  h3 {
-    font-size: ${ fontSize.menu };
-    margin-bottom: 10px;
+
+  @media ${ device.laptop } {
+    flex-direction: row;
+    justify-content: space-between;
+    position: static;
+    left: 0;
+    top: 0;
+    transition: none;
+    z-index: auto;
+    background-color: ${ colores.marronClaro };
+    overflow: hidden;
+
   }
 
   ${ props => props.menu === 'true' && css`
     left: 0;
   ` }
 `;
-
-const Nav = styled (NavLink)`
-  font-size: ${ fontSize.title };
-  font-weight: 500;
-  color: ${ colores.blanco };
-  line-height: 70px;
-  text-decoration: none;
-
-  &:hover {
-    color: ${ colores.marronClaro };
-  }
-
-
-`;
-
-
-
-
 

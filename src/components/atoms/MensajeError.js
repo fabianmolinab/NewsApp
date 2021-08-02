@@ -5,7 +5,7 @@
  */
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { colores } from '../../styles/colores';
+import { colores } from '../../const/colores';
 
 export const MensajeError = ( {mensajeConfirmacion} ) => {
   return (

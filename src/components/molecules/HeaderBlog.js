@@ -9,7 +9,8 @@ import { Logo } from '../atoms/Logo';
 import { MenuNav } from './MenuNav';
 import { InputBusqueda } from '../atoms/InputBusqueda';
 import { IconHamburguesa } from '../atoms/IconHamburguesa';
-import { colores } from '../../styles/colores';
+import { colores } from '../../const/colores';
+import { device } from '../../const/device';
 
 export const HeaderBlog = () => {
 
@@ -46,4 +47,9 @@ const ContenedorHeader = styled.header`
   background-color: ${ colores.marronClaro };
   max-width: 1200px;
   margin: 0 auto;
+
+  @media ${ device.laptop } {
+    height: 70px;
+    padding: 15px;
+  }
 `;

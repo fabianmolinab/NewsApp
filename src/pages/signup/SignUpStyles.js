@@ -1,20 +1,20 @@
 import styled, { css } from 'styled-components';
 import { device } from '../../const/device';
-import { colores } from '../../styles/colores';
+import { colores } from '../../const/colores';
 
 const FormGrid = styled.form`
     display: flex;
     flex-direction: column;
     padding: 25px;
 
-  @media ${device.tablet} {
+  @media ${ device.tablet } {
     //display: grid;
     width: 60.5%;
     height: 100%;
     margin-top: 20px;
   }
 
-  @media ${device.laptop} {
+  @media ${ device.laptop } {
     width: 60.5%;
     display: grid;
     grid-template-columns: repeat(2, 2fr) ;
@@ -27,44 +27,44 @@ const FormGrid = styled.form`
 //Propiedad Flex es display flex
 const ContenedorGridC2 = styled.div`
   
-  @media ${device.laptop} {
+  @media ${ device.laptop } {
     grid-column: span 2;
   }
 
-  ${props => props.flex && css`
+  ${ props => props.flex && css`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   ` }
 
-  ${props => props.paddB_15 && css`
+  ${ props => props.paddB_15 && css`
     padding: 5px 0 15px 0;
   ` }
 
-  ${props => props.paddT_15 && css`
+  ${ props => props.paddT_15 && css`
     margin: 15px 0;
-  `}
+  ` }
 
 `;
 
 /*Estilos para mostrar o no el mensaje enviado,
-* Si es true su muestra el mensaje, si es false no se muestra
-* Ambas son propiedad de tipo string del componente
-*/
+ * Si es true su muestra el mensaje, si es false no se muestra
+ * Ambas son propiedad de tipo string del componente
+ */
 
 const RegistroEnviado = styled.p`
   font-size: 17px;
   font-weight: 600;
 
-  ${props => props.mensaje === 'true' && css`
+  ${ props => props.mensaje === 'true' && css`
     display: block;
   ` }
-  ${props => props.mensaje === 'false' && css`
+  ${ props => props.mensaje === 'false' && css`
     display: none;
   ` }
-  ${props => props.fallido && css`
-    color: ${colores.rojo};
+  ${ props => props.fallido && css`
+    color: ${ colores.rojo };
   ` }
 `;
 

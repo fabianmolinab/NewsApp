@@ -6,7 +6,7 @@ const fonts = {
 
 const fontSize = {
 
-  regular: '16px',
+  regular: '18px',
   title: '25px',
   menu: '35px',
 

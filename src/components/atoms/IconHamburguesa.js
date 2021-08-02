@@ -8,7 +8,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { colores } from '../../styles/colores';
+import { colores } from '../../const/colores';
+import { device } from '../../const/device';
 
 export const IconHamburguesa = ( {menu, cambiarMenu} ) => {
 
@@ -41,4 +42,8 @@ const Botton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
+
+  @media ${ device.laptop } {
+    display: none;
+  }
 `;

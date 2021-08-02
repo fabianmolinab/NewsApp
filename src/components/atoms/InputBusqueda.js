@@ -8,7 +8,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 import { device } from '../../const/device';
-import { colores } from '../../styles/colores';
+import { colores } from '../../const/colores';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
