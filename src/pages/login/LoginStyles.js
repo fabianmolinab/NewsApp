@@ -8,30 +8,24 @@ const ContendorGlobal = styled.div`
   margin: 0 auto;
   height: 100%;
 
-  @media ${device.tablet} {
+  @media ${ device.tablet } {
     flex-direction: row;
     max-width: 800px;
   };
 
   //Estilos para el signup || La pagina de registrate || Hay que colocar esa propiedad para que se active
 
-  ${props => props.signup && css`
+  ${ props => props.signup && css`
 
-    @media ${device.tablet} {
+    @media ${ device.tablet } {
       max-width: 800px;
       align-items: flex-start;
-  };
+    };
 
-  @media ${device.laptop} {
-    max-width: 1000px;
-  };
+    @media ${ device.laptop } {
+      max-width: 1000px;
+    };
   ` }
-`;
-
-const HeaderLogin = styled.header`
-  text-align: center;
-  margin-bottom: 20px;
-  box-sizing: border-box;
 `;
 
 const ContendorFormulario = styled.form`
@@ -42,7 +36,7 @@ const ContendorFormulario = styled.form`
   height: 600px;
   width: 40.5%;
 
-  @media ${device.mobileS} {
+  @media ${ device.mobileS } {
     width: 80%;
   };
 `;
@@ -50,12 +44,10 @@ const ContendorFormulario = styled.form`
 const ContenedorFlex = styled.div`
   display: flex;
   margin: 0 auto;
-  margin-top: 15px;
 `;
 
 export {
   ContendorGlobal,
-  HeaderLogin,
   ContendorFormulario,
   ContenedorFlex,
 };

@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { Logo } from '../atoms/Logo';
-import { NavBar } from '../atoms/NavBar';
+import { MenuNav } from './MenuNav';
 import { InputBusqueda } from '../atoms/InputBusqueda';
 import { IconHamburguesa } from '../atoms/IconHamburguesa';
 import { colores } from '../../styles/colores';
@@ -19,8 +19,8 @@ export const HeaderBlog = () => {
       <ContenedorTotal>
         <ContenedorHeader>
           <Logo grid/>
-          <NavBar menu={ menu }
-                  cambiarMenu={ cambiarMenu }
+          <MenuNav menu={ menu }
+                   cambiarMenu={ cambiarMenu }
           />
           <InputBusqueda/>
           <IconHamburguesa

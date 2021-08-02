@@ -1,5 +1,8 @@
 /**
- *
+ * Menu de Navegación de la aplicación principal
+ * @param {object} menu valor del estado para desplegar o no el menu (mobile)
+ * @param {function} cambiarMenu cambia el estado para deplegar o no el menu (mobile)
+ * @param {function} desaparecerMenu cambia el estado para quitar el menu (mobile) cuando se click algun {nav}
  * */
 import React from 'react';
 import styled, { css } from 'styled-components';
@@ -7,9 +10,9 @@ import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { colores } from '../../styles/colores';
 import { fontSize } from '../../styles/fonts';
-import { InputBusqueda } from './InputBusqueda';
+import { InputBusqueda } from '../atoms/InputBusqueda';
 
-export const NavBar = ( {menu, cambiarMenu} ) => {
+export const MenuNav = ( {menu, cambiarMenu} ) => {
 
   const desaparecerMenu = () => {
     if (menu.estado === 'true') {
