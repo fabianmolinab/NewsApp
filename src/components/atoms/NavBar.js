@@ -10,18 +10,14 @@ import { fontSize } from '../../styles/fonts';
 import { InputBusqueda } from './InputBusqueda';
 
 export const NavBar = ( {menu, cambiarMenu} ) => {
-  console.log (menu.estado);
 
-  const activeLink = () => {
-
+  const desaparecerMenu = () => {
     if (menu.estado === 'true') {
-
       cambiarMenu ({
         ...menu,
         estado: 'false',
       });
     }
-
   };
 
   return (
@@ -29,15 +25,15 @@ export const NavBar = ( {menu, cambiarMenu} ) => {
       <ContenedorNav menu={ menu.estado }>
         <h3> Menu </h3>
 
-        <Nav to="/blog/nuevo" activeClassName="selected">
+        <Nav to="/blog/nuevo" onClick={ desaparecerMenu }>
           Lo nuevo
         </Nav>
 
-        <Nav to="/blog/destacado" isActive={ () => activeLink }>
+        <Nav to="/blog/destacado" onClick={ desaparecerMenu }>
           Destacado
         </Nav>
 
-        <Nav to="/blog/podcasts/">
+        <Nav to="/blog/podcasts/" onClick={ desaparecerMenu }>
           Podcasts
         </Nav>
 
@@ -84,9 +80,7 @@ const Nav = styled (NavLink)`
     color: ${ colores.marronClaro };
   }
 
-  selected {
-    color: red;
-  }
+
 `;
 
 
