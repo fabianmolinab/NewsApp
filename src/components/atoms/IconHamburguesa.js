@@ -1,13 +1,13 @@
 /**
- * Componente de menu hambuerguesa que cambia dependiendo el estado
+ * Componente de menu hamburguesa que cambia dependiendo el estado
  * @param {object} menu
- * @param {function} cambiarMenu cambia el estado del Menu
+ * @param {function} cambiarMenu cambia el estado del Menu para desplegarlo o no
  *
  **/
 import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { colores } from '../../const/colores';
 import { device } from '../../const/device';
 
@@ -29,10 +29,24 @@ export const IconHamburguesa = ( {menu, cambiarMenu} ) => {
   };
 
   return (
+      <>
+        {
+          (
+              menu.estado === 'false' )
+          &&
+          <Botton onClick={ handleNav }>
+            <FontAwesomeIcon icon={ faBars }/>
+          </Botton>
+        }
+        { (
+            menu.estado === 'true' )
+        &&
+        <Botton onClick={ handleNav }>
+          <FontAwesomeIcon icon={ faTimes }/>
+        </Botton>
 
-      <Botton onClick={ handleNav }>
-        <FontAwesomeIcon icon={ faBars }/>
-      </Botton>
+        }
+      </>
   );
 };
 
