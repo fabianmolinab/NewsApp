@@ -20,11 +20,5 @@ const ImgLogo = styled.img`
     width: 44px;
 
   ` }
-
-  ${ props => props.navbar && css`
-
-    width: 40px;
-
-  ` }
 `;
 

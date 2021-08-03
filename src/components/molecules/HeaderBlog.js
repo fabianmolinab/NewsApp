@@ -4,13 +4,12 @@
 
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
-import { Logo } from '../atoms/Logo';
 import { MenuNav } from './MenuNav';
 import { InputBusqueda } from '../atoms/InputBusqueda';
 import { IconHamburguesa } from '../atoms/IconHamburguesa';
 import { colores } from '../../const/colores';
 import { device } from '../../const/device';
+import { SegmentLogo } from '../atoms/SegmentLogo';
 
 export const HeaderBlog = () => {
 
@@ -19,7 +18,7 @@ export const HeaderBlog = () => {
   return (
       <ContenedorTotal>
         <ContenedorHeader>
-          <Logo grid/>
+          <SegmentLogo/>
           <MenuNav menu={ menu }
                    cambiarMenu={ cambiarMenu }
           />
@@ -36,7 +35,6 @@ export const HeaderBlog = () => {
 const ContenedorTotal = styled.div`
   background-color: ${ colores.marronClaro };
 
-  //
 `;
 
 const ContenedorHeader = styled.header`

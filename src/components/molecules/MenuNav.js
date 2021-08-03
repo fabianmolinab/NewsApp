@@ -63,7 +63,6 @@ const ContenedorNav = styled.div`
   font-size: 20px;
   overflow-y: auto;
 
-
   @media ${ device.laptop } {
     flex-direction: row;
     justify-content: space-between;
@@ -74,7 +73,6 @@ const ContenedorNav = styled.div`
     z-index: auto;
     background-color: ${ colores.marronClaro };
     overflow: hidden;
-
   }
 
   ${ props => props.menu === 'true' && css`
