@@ -1,26 +1,41 @@
 import React from 'react';
-import { BrowserRouter as Redirect, Route, Switch } from 'react-router-dom';
-import { SeccionDestacados } from './SeccionDestacados';
-import { SeccionNuevo } from './SeccionNuevo';
-import { HeaderBlog } from '../../components/molecules/HeaderBlog';
-import { SeccionVideos } from './SeccionVideos';
+import { ImgBlog } from '../../components/atoms/ImgBlog';
+import styled from 'styled-components';
 
 export const Blog = () => {
 
   return (
       <>
-        <HeaderBlog/>
-        <div>
-          <Switch>
-            <Route exact path="/blog" component={ Blog }/>
-            <Route exact path="/blog/destacados"
-                   component={ SeccionDestacados }/>
-            <Route exact path="/blog/nuevo" component={ SeccionNuevo }/>
-            <Route exact path="/blog/videos/" component={ SeccionVideos }/>
-            <Redirect to="/blog"/>
-          </Switch>
-        </div>
+        <ContenedorGlobal>
+
+          <h2>Blog</h2>
+          <div>
+            <ImgBlog
+                src="https://images.pexels.com/photos/5077065/pexels-photo-5077065.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+            />
+
+            <div>
+              <sub>5 min de lectura</sub>
+
+              <tittle>
+                Lorem ipsum dolor sit amet, consectetur.
+              </tittle>
+              <meta name="description"
+                    content="Chica se retira de los juegos olimpicos"
+              />
+              <div>
+                <icon/>
+                <icon/>
+              </div>
+            </div>
+          </div>
+        </ContenedorGlobal>
       </>
   );
 };
+
+const ContenedorGlobal = styled.div`
+  //margin-top: 20px;
+  padding: 20px;
+`;
 
