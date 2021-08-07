@@ -34,6 +34,7 @@ export const HeaderBlog = () => {
 
 const ContenedorTotal = styled.div`
   background-color: ${ colores.marronClaro };
+  position: static;
 
 `;
 

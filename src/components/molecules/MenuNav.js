@@ -20,25 +20,25 @@ export const MenuNav = ( {menu, cambiarMenu} ) => {
         <Nav estado={ menu }
              cambiarEstado={ cambiarMenu }
              nombre="Lo nuevo"
-             to="/blog/nuevo"
+             to="/nuevo"
         />
 
         <Nav estado={ menu }
              cambiarEstado={ cambiarMenu }
-             nombre="Destacado"
-             to="/blog/destacado"
+             nombre="Destacados"
+             to="/destacados"
         />
 
         <Nav estado={ menu }
              cambiarEstado={ cambiarMenu }
              nombre="Podcasts"
-             to="/blog/podcasts"
+             to="/podcasts"
         />
 
         <Nav estado={ menu }
              cambiarEstado={ cambiarMenu }
              nombre="Videos"
-             to="/blog/videos"
+             to="/videos"
         />
 
         <InputBusqueda menuNav/>

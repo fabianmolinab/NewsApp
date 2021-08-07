@@ -6,7 +6,7 @@ import { device } from '../../const/device';
 export const SegmentLogo = () => {
   return (
 
-      <Nav to="/">
+      <Nav to="/blog">
 
         <ImgLogo src="./assets/imgs/segment-logo.svg"
                  alt="Logo Segment"
@@ -25,7 +25,7 @@ const Nav = styled (NavLink)`
 const ImgLogo = styled.img`
 
   height: 80%;
-  
+
 
   @media ${ device.laptop } {
     width: auto;
