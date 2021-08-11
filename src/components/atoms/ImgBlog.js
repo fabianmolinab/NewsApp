@@ -7,18 +7,12 @@ import styled from 'styled-components';
 
 export const ImgBlog = ( {src} ) => {
   return (
-      <Contenedor>
-        <ImgStyles src={ src } alt="Descripción del blog"/>
-      </Contenedor>
+      <ImgStyles src={ src } alt="Descripción del blog"/>
+
   );
 };
 
-const Contenedor = styled.div`
-  width: 60%;
-  //height: 50px;
-`;
-
 const ImgStyles = styled.img`
-  width: 60%;
-  //height: 60%;
+  width: 80%;
+  border-radius: 6px;
 `;
