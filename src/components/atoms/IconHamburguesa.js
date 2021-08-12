@@ -1,5 +1,5 @@
 /**
- * Componente de menu hamburguesa que cambia dependiendo el estado
+ * Componente de menu hamburguesa que cambia a X dependiendo el estado
  * @param {object} menu
  * @param {function} cambiarMenu cambia el estado del Menu para desplegarlo o no
  *
