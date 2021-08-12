@@ -9,6 +9,7 @@ import { InputBusqueda } from '../atoms/InputBusqueda';
 import { IconHamburguesa } from '../atoms/IconHamburguesa';
 import { colores } from '../../const/colores';
 import { device } from '../../const/device';
+import { Logo } from '../atoms/Logo';
 
 export const Header = () => {
 
@@ -17,6 +18,7 @@ export const Header = () => {
   return (
       <ContenedorTotal>
         <ContenedorHeader>
+          <Logo/>
           <MenuNav menu={ menu }
                    cambiarMenu={ cambiarMenu }
           />
