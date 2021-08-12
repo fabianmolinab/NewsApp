@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { ImgBlog } from '../atoms/ImgBlog';
 import { Title } from '../atoms/Tittle';
-import { Icon } from '../atoms/Icon';
-import { faComment, faHeart } from '@fortawesome/free-regular-svg-icons';
 
 export const CardBlog = () => {
   return (
@@ -18,10 +16,6 @@ export const CardBlog = () => {
           <Title
               content="Lorem ipsum dolor sit amet, consectetur."
           />
-          <div>
-            <Icon icon={ faComment } desc="360"/>
-            <Icon icon={ faHeart } desc="1" heart/>
-          </div>
         </ContenedorDescription>
       </ContenedorCard>
   );

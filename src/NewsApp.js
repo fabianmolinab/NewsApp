@@ -2,12 +2,12 @@ import React from 'react';
 import { AppRouter } from './routers/AppRouter';
 import { GlobalStyle } from './styles/GlobalStyle';
 
-export const SegmentApp = () => {
+export const NewsApp = () => {
 
   return (
-    <React.StrictMode>
-      <GlobalStyle />
-      <AppRouter />
-    </React.StrictMode>
+      <React.StrictMode>
+        <GlobalStyle/>
+        <AppRouter/>
+      </React.StrictMode>
   );
 };

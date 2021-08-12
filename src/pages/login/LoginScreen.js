@@ -8,39 +8,36 @@ import { Botton } from '../../components/atoms/Botton';
 import { ButtonGradient } from '../../components/atoms/ButtonGradient';
 import { HeaderForm } from '../../components/atoms/HeaderForm';
 import { ImgLogin } from '../../components/atoms/ImgLogin';
-import { Logo } from '../../components/atoms/Logo';
 import { InputFormulario } from '../../components/molecules/InputFormulario';
 import { expresiones } from '../../const/expresionesRegulares';
 import {
-  ContendorFormulario,
-  ContendorGlobal,
-  ContenedorFlex,
+  ContendorFormulario, ContendorGlobal, ContenedorFlex,
 } from './LoginStyles';
 
 export const LoginScreen = () => {
 
   //Este hook es para manejar el formulario de Correo
-  const [correo, cambiarCorreo] = useState ({
+  const [correo, cambiarCorreo] = useState({
     campo: '', valido: null,
   });
 
-  const [password, cambiarPassword] = useState ({
+  const [password, cambiarPassword] = useState({
     campo: '', valido: null,
   });
 
-  const history = useHistory ();
+  const history = useHistory();
 
   const handleLogin = ( e ) => {
-    e.preventDefault ();
+    e.preventDefault();
 
     //Acá se realiza la validación de ambos formularios y redirija a '/'
     if (correo.valido === 'true' && password.valido === 'true') {
-      history.push ('/');
+      history.push('/');
     }
   };
 
   const handleSignUp = () => {
-    history.push ('/signup');
+    history.push('/signup');
   };
 
   return (
@@ -50,10 +47,7 @@ export const LoginScreen = () => {
           <ImgLogin/>
 
           <ContendorFormulario onSubmit={ handleLogin }>
-            <div>
-              <Logo/>
-            </div>
-            <HeaderForm content="Inicia Sección en Segment"
+            <HeaderForm content="Inicia Sección en NewsApp"
                         marginB_30
             />
 

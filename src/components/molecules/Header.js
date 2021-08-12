@@ -9,16 +9,14 @@ import { InputBusqueda } from '../atoms/InputBusqueda';
 import { IconHamburguesa } from '../atoms/IconHamburguesa';
 import { colores } from '../../const/colores';
 import { device } from '../../const/device';
-import { SegmentLogo } from '../atoms/SegmentLogo';
 
-export const HeaderBlog = () => {
+export const Header = () => {
 
-  const [menu, cambiarMenu] = useState ({estado: 'false'});
+  const [menu, cambiarMenu] = useState({estado: 'false'});
 
   return (
       <ContenedorTotal>
         <ContenedorHeader>
-          <SegmentLogo/>
           <MenuNav menu={ menu }
                    cambiarMenu={ cambiarMenu }
           />

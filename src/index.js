@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { SegmentApp } from './SegmentApp';
+import { NewsApp } from './NewsApp';
 
 ReactDOM.render(
-    <SegmentApp />,
+    <NewsApp/>,
     document.getElementById('root'),
 );
