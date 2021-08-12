@@ -8,11 +8,11 @@ NewsAPI.
 Para instalar la aplicación de forma local una vez descargados los archivos del repositorios o haber clonado el mismo
 con la paquetería Yarn instalada de la siguiente manera:
 
-`**yarn -i**`
+`yarn -i`
 
 Para lanzar el servidor local:
 
-`**yarn start**`
+`yarn start`
 
 ## Tecnologías de Desarrollo
 
