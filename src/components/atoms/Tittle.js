@@ -16,17 +16,12 @@ const TitleStyles = styled.h3`
   font-family: ${ fonts.regular };
   font-weight: 600;
   color: ${ colores.textoNegro };
-  letter-spacing: normal;
-  word-spacing: normal;
-  line-height: 21px;
+  letter-spacing: -0.003em;
+  line-height: 28px;
   cursor: pointer;
+  margin-top: 5px;
 
   &:hover {
-    color: ${ colores.verde };
-  }
-
-  &:active {
     color: ${ colores.verdeOscuro };
-
   }
 `;

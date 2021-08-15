@@ -12,6 +12,7 @@ export const Blog = () => {
           <CardBlog/>
           <CardBlog/>
           <CardBlog/>
+          <CardBlog/>
 
         </ContenedorGlobal>
       </>
@@ -19,5 +20,5 @@ export const Blog = () => {
 };
 
 const ContenedorGlobal = styled.div`
-  padding: 20px;
+  padding: 10px;
 `;

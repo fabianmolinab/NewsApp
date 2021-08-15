@@ -13,6 +13,6 @@ export const ImgBlog = ( {src} ) => {
 };
 
 const ImgStyles = styled.img`
-  width: 80%;
   border-radius: 6px;
+  max-height: 40%;
 `;
