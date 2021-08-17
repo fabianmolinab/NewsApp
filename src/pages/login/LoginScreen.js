@@ -75,6 +75,7 @@ export const LoginScreen = () => {
               />
 
               <Botton onClick={ handleSignUp } nombre="Registrate"/>
+
             </ContenedorFlex>
           </ContendorFormulario>
         </ContendorGlobal>

@@ -1,10 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { device } from '../../const/device';
+import { colores } from '../../const/colores';
 
 export const Logo = () => {
   return (
-      <LogoStyles>NewsApp</LogoStyles>
+      <LinkStyles to="/">
+        <LogoStyles>NewsApp</LogoStyles>
+      </LinkStyles>
   );
 };
 
@@ -15,4 +19,11 @@ const LogoStyles = styled.h2`
 
   }
 
+  &:hover {
+    color: ${ colores.verdeOscuro }
+  }
+`;
+const LinkStyles = styled(Link)`
+  text-decoration: none;
+  color: ${ colores.textoNegro };
 `;

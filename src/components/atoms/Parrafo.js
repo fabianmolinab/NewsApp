@@ -16,7 +16,7 @@ export const Parrafo = ( {contenido, desc} ) => {
 
 const ParrafoStyle = styled.p`
 
-  font-family: ${ fonts.display };
+  font-family: ${ fonts.regular };
   font-size: 18px;
   line-height: 28px;
   letter-spacing: -0.003em;
