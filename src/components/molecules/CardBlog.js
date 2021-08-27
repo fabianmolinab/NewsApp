@@ -1,19 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { ImgBlog } from '../atoms/ImgBlog';
 import { Title } from '../atoms/Tittle';
 import { Parrafo } from '../atoms/Parrafo';
 import { colores } from '../../const/colores';
 
 export const CardBlog = () => {
+
   return (
-      <ContenedorCard to="#">
+      <ContenedorCard>
         <ImgBlog
             src="https://images.unsplash.com/photo-1593642533144-3d62aa4783ec?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
         />
         <ContenedorDescription>
-          <a>5 min de lectura</a>
+          <button>5 min de lectura</button>
 
 
           <Title
@@ -28,12 +28,12 @@ export const CardBlog = () => {
   );
 };
 
-const ContenedorCard = styled(Link)`
+const ContenedorCard = styled.div`
   display: flex;
   flex-direction: column;
+  text-decoration: none;
   margin-top: 20px;
   border-radius: 6px;
-  text-decoration: none;
   transition: 0.4s;
 
   transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg);
@@ -55,7 +55,8 @@ const ContenedorDescription = styled.div`
   flex-wrap: wrap;
   margin-top: 10px;
 
-  a {
+  button {
+    border: none;
     background-color: ${ colores.verdeOscuro };
     border-radius: 10px;
     padding: 5px;

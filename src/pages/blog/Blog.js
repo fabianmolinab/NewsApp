@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { CardBlog } from '../../components/molecules/CardBlog';
+import { NewsPage } from '../../context/NewContext';
 
 export const Blog = () => {
+  NewsPage();
 
   return (
       <>
