@@ -9,10 +9,11 @@ export const NewsPage = () => {
 
   useEffect(() => {
     getAPI().then(( data ) => {
-      setNews(data);
-      console.log(data);
+      setNews(data.articles);
+      //console.log(data);
     }).catch(( error ) => console.log(error));
   }, []);
 
+  console.log(news);
   return news;
 };

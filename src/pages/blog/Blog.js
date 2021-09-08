@@ -5,7 +5,7 @@ import { NewsPage } from '../../context/NewContext';
 
 export const Blog = () => {
   NewsPage();
-
+  //console.log(news);
   return (
       <>
         <ContenedorGlobal>
