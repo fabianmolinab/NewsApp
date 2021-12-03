@@ -42,14 +42,15 @@ export const Input = ({
   }
 
   return (
-      <InputStyles type={ type }
-                   autoComplete="off"
-                   value={ estado.campo }
-                   onChange={ onChange }
-                   onBlur={ validacion }
-                   valido={ valido }
-                   name={ name }
-      />
+    <InputStyles
+      type={type}
+      autoComplete="off"
+      value={estado.campo}
+      onChange={onChange}
+      onBlur={validacion}
+      valido={valido}
+      name={name}
+    />
   )
 }
 
@@ -62,10 +63,14 @@ const InputStyles = styled.input`
   background-color: ${colores.blanco};
 
   /*La propiedad valido cambiar el color del borde del input*/
-  ${props => props.valido === 'true' && css`
-    border: 1.5px solid ${colores.verde} !important;
-  `}
-  ${props => props.valido === 'false' && css`
-    border: 1.5px solid ${colores.rojo} !important;
-  `}
+  ${(props) =>
+    props.valido === 'true' &&
+    css`
+      border: 1.5px solid ${colores.verde} !important;
+    `}
+  ${(props) =>
+    props.valido === 'false' &&
+    css`
+      border: 1.5px solid ${colores.rojo} !important;
+    `}
 `

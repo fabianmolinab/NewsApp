@@ -15,26 +15,20 @@ export const Header = () => {
   const [menu, cambiarMenu] = useState({ estado: 'false' })
 
   return (
-      <ContenedorTotal>
-        <ContenedorHeader>
-          <Logo/>
-          <MenuNav menu={ menu }
-                   cambiarMenu={ cambiarMenu }
-          />
-          <InputBusqueda/>
-          <IconHamburguesa
-              menu={ menu }
-              cambiarMenu={ cambiarMenu }
-          />
-        </ContenedorHeader>
-      </ContenedorTotal>
+    <ContenedorTotal>
+      <ContenedorHeader>
+        <Logo />
+        <MenuNav menu={menu} cambiarMenu={cambiarMenu} />
+        <InputBusqueda />
+        <IconHamburguesa menu={menu} cambiarMenu={cambiarMenu} />
+      </ContenedorHeader>
+    </ContenedorTotal>
   )
 }
 
 const ContenedorTotal = styled.div`
   background-color: ${colores.marronClaro};
   position: static;
-
 `
 
 const ContenedorHeader = styled.header`

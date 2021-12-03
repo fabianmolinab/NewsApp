@@ -11,21 +11,22 @@ const ContendorGlobal = styled.div`
   @media ${device.tablet} {
     flex-direction: row;
     max-width: 800px;
-  };
+  }
 
   //Estilos para el signup || La pagina de registrate || Hay que colocar esa propiedad para que se active
 
-  ${props => props.signup && css`
+  ${(props) =>
+    props.signup &&
+    css`
+      @media ${device.tablet} {
+        max-width: 800px;
+        align-items: flex-start;
+      }
 
-    @media ${device.tablet} {
-      max-width: 800px;
-      align-items: flex-start;
-    };
-
-    @media ${device.laptop} {
-      max-width: 1000px;
-    };
-  `}
+      @media ${device.laptop} {
+        max-width: 1000px;
+      } ;
+    `}
 `
 
 const ContendorFormulario = styled.form`
@@ -38,7 +39,7 @@ const ContendorFormulario = styled.form`
 
   @media ${device.mobileS} {
     width: 80%;
-  };
+  } ;
 `
 
 const ContenedorFlex = styled.div`
@@ -46,8 +47,4 @@ const ContenedorFlex = styled.div`
   margin: 0 auto;
 `
 
-export {
-  ContendorGlobal,
-  ContendorFormulario,
-  ContenedorFlex
-}
+export { ContendorGlobal, ContendorFormulario, ContenedorFlex }

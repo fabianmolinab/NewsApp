@@ -25,12 +25,9 @@ export const Nav = ({ estado, cambiarEstado, nombre, to }) => {
   }
 
   return (
-      <NavStyle to={ to }
-                onClick={ desaparecerMenu }
-                activeStyle={ activeStyle }
-      >
-        { nombre }
-      </NavStyle>
+    <NavStyle to={to} onClick={desaparecerMenu} activeStyle={activeStyle}>
+      {nombre}
+    </NavStyle>
   )
 }
 
@@ -48,7 +45,6 @@ const NavStyle = styled(NavLink)`
   &:active {
     color: ${colores.verdeOscuro};
   }
-
 
   @media ${device.laptop} {
     font-size: ${fontSize.regular};

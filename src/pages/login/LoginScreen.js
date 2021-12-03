@@ -11,17 +11,21 @@ import { ImgLogin } from '../../components/atoms/ImgLogin'
 import { InputFormulario } from '../../components/molecules/InputFormulario'
 import { expresiones } from '../../const/expresionesRegulares'
 import {
-  ContendorFormulario, ContendorGlobal, ContenedorFlex
+  ContendorFormulario,
+  ContendorGlobal,
+  ContenedorFlex
 } from './LoginStyles'
 
 export const LoginScreen = () => {
   // Este hook es para manejar el formulario de Correo
   const [correo, cambiarCorreo] = useState({
-    campo: '', valido: null
+    campo: '',
+    valido: null
   })
 
   const [password, cambiarPassword] = useState({
-    campo: '', valido: null
+    campo: '',
+    valido: null
   })
 
   const history = useHistory()
@@ -40,44 +44,37 @@ export const LoginScreen = () => {
   }
 
   return (
-      <>
+    <>
+      <ContendorGlobal>
+        <ImgLogin />
 
-        <ContendorGlobal>
-          <ImgLogin/>
+        <ContendorFormulario onSubmit={handleLogin}>
+          <HeaderForm content="Inicia Sección en NewsApp" marginB_30 />
 
-          <ContendorFormulario onSubmit={ handleLogin }>
-            <HeaderForm content="Inicia Sección en NewsApp"
-                        marginB_30
-            />
+          <InputFormulario
+            estado={correo}
+            cambiarEstado={cambiarCorreo}
+            name="Correo Electronico"
+            type="text"
+            error="Tienes un error en el correo"
+            expresionRegular={expresiones.correo}
+          />
 
-            <InputFormulario
-                estado={ correo }
-                cambiarEstado={ cambiarCorreo }
-                name="Correo Electronico"
-                type="text"
-                error="Tienes un error en el correo"
-                expresionRegular={ expresiones.correo }
-            />
+          <InputFormulario
+            estado={password}
+            cambiarEstado={cambiarPassword}
+            name="Contraseña"
+            type="password"
+            error="Tienes un error en la contraseña"
+            expresionRegular={expresiones.password}
+          />
+          <ContenedorFlex>
+            <ButtonGradient type="submit" nombre="Iniciar Sección" />
 
-            <InputFormulario
-                estado={ password }
-                cambiarEstado={ cambiarPassword }
-                name="Contraseña"
-                type="password"
-                error="Tienes un error en la contraseña"
-                expresionRegular={ expresiones.password }
-            />
-            <ContenedorFlex>
-              <ButtonGradient
-                  type="submit"
-                  nombre="Iniciar Sección"
-              />
-
-              <Botton onClick={ handleSignUp } nombre="Registrate"/>
-
-            </ContenedorFlex>
-          </ContendorFormulario>
-        </ContendorGlobal>
-      </>
+            <Botton onClick={handleSignUp} nombre="Registrate" />
+          </ContenedorFlex>
+        </ContendorFormulario>
+      </ContendorGlobal>
+    </>
   )
 }

@@ -16,7 +16,7 @@ const Button = styled.button`
   border: 1.5px solid ${colores.textoNegro};
   color: ${colores.textoNegro};
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
   z-index: 3;
   border-radius: 10px;
 
@@ -24,7 +24,12 @@ const Button = styled.button`
     color: ${colores.textoNegro};
     font-weight: 700;
     border: none;
-    background: linear-gradient(to right, ${colores.azul}, ${colores.verde}, ${colores.verdeIntenso});
+    background: linear-gradient(
+      to right,
+      ${colores.azul},
+      ${colores.verde},
+      ${colores.verdeIntenso}
+    );
   }
 `
 
@@ -41,7 +46,7 @@ const Bg = styled.div`
 const BgGradient = styled(Bg)`
   z-index: 1;
   transform: scale(0.2, 1.4);
-  transition: all .4s;
+  transition: all 0.4s;
 `
 
 const ContenedorBoton = styled.div`
@@ -53,20 +58,23 @@ const ContenedorBoton = styled.div`
 
   &:hover ${BgGradient} {
     transform: scale(1.1, 1.4);
-    background: linear-gradient(to right, ${colores.azul}, ${colores.verde}, ${colores.verdeIntenso});
+    background: linear-gradient(
+      to right,
+      ${colores.azul},
+      ${colores.verde},
+      ${colores.verdeIntenso}
+    );
   }
 `
 
 export const ButtonGradient = ({ nombre, type }) => {
   return (
-      <>
-        <ContenedorBoton>
-          <Button type={ type }>
-            { nombre }
-          </Button>
-          <Bg/>
-          <BgGradient/>
-        </ContenedorBoton>
-      </>
+    <>
+      <ContenedorBoton>
+        <Button type={type}>{nombre}</Button>
+        <Bg />
+        <BgGradient />
+      </ContenedorBoton>
+    </>
   )
 }

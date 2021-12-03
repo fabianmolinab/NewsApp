@@ -26,10 +26,7 @@ export const InputFormulario = ({
 }) => {
   return (
     <ContenedorInput signup={signup}>
-      <LabelInput
-        color={estado.valido}
-        name={name}
-      />
+      <LabelInput color={estado.valido} name={name} />
 
       <Input
         estado={estado}
@@ -40,9 +37,7 @@ export const InputFormulario = ({
         expresionRegular={expresionRegular}
       />
 
-      <TituloError valido={estado.valido}
-        error={error}
-      />
+      <TituloError valido={estado.valido} error={error} />
     </ContenedorInput>
   )
 }
@@ -52,15 +47,17 @@ const ContenedorInput = styled.div`
   width: 100%;
   flex-direction: column;
   margin-bottom: 15px;
-  
-  ${props => props.signup && css`
-    align-items: center;
-    label {
-      width: 100%;
-      margin-top: 15px;
-    }
-    input{
-      width: 100%;
-    }
-  `}
+
+  ${(props) =>
+    props.signup &&
+    css`
+      align-items: center;
+      label {
+        width: 100%;
+        margin-top: 15px;
+      }
+      input {
+        width: 100%;
+      }
+    `}
 `

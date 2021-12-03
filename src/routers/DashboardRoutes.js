@@ -10,21 +10,20 @@ import { SeccionPodcasts } from '../pages/blog/podcasts/SeccionPodcasts'
 
 export const DashboardRoutes = () => {
   return (
-      <>
-        <Header/>
+    <>
+      <Header />
 
-        <div>
-          <Switch>
+      <div>
+        <Switch>
+          <Route exact path="/blog" component={Blog} />
+          <Route exact path="/nuevo" component={SeccionNuevo} />
+          <Route exact path="/destacados" component={SeccionDestacados} />
+          <Route exact path="/podcasts" component={SeccionPodcasts} />
+          <Route exact path="/videos" component={SeccionVideos} />
 
-            <Route exact path="/blog" component={ Blog }/>
-            <Route exact path="/nuevo" component={ SeccionNuevo }/>
-            <Route exact path="/destacados" component={ SeccionDestacados }/>
-            <Route exact path="/podcasts" component={ SeccionPodcasts }/>
-            <Route exact path="/videos" component={ SeccionVideos }/>
-
-            <Redirect to="/blog"/>
-          </Switch>
-        </div>
-      </>
+          <Redirect to="/blog" />
+        </Switch>
+      </div>
+    </>
   )
 }

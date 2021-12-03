@@ -27,22 +27,18 @@ export const IconHamburguesa = ({ menu, cambiarMenu }) => {
   }
 
   return (
-      <>
-        {
-          (
-            menu.estado === 'false') &&
-          <Botton onClick={ handleNav }>
-            <FontAwesomeIcon icon={ faBars }/>
-          </Botton>
-        }
-        { (
-          menu.estado === 'true') &&
-        <Botton onClick={ handleNav }>
-          <FontAwesomeIcon icon={ faTimes }/>
+    <>
+      {menu.estado === 'false' && (
+        <Botton onClick={handleNav}>
+          <FontAwesomeIcon icon={faBars} />
         </Botton>
-
-        }
-      </>
+      )}
+      {menu.estado === 'true' && (
+        <Botton onClick={handleNav}>
+          <FontAwesomeIcon icon={faTimes} />
+        </Botton>
+      )}
+    </>
   )
 }
 

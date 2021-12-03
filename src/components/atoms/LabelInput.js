@@ -8,11 +8,7 @@ import styled, { css } from 'styled-components'
 import { colores } from '../../const/colores'
 
 export const LabelInput = ({ color, name }) => {
-  return (
-      <Label color={ color }>
-        { name }
-      </Label>
-  )
+  return <Label color={color}>{name}</Label>
 }
 
 const Label = styled.label`
@@ -23,11 +19,15 @@ const Label = styled.label`
   min-height: 20px;
   cursor: pointer;
 
-  ${props => props.color === 'true' && css`
-    color: ${colores.verdeOscuro} !important;
-  `}
+  ${(props) =>
+    props.color === 'true' &&
+    css`
+      color: ${colores.verdeOscuro} !important;
+    `}
 
-  ${props => props.color === 'false' && css`
-    color: ${colores.rojo} !important;
-  `}
+  ${(props) =>
+    props.color === 'false' &&
+    css`
+      color: ${colores.rojo} !important;
+    `}
 `

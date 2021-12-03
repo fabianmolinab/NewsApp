@@ -4,11 +4,7 @@ import { colores } from '../../const/colores'
 import { fonts } from '../../const/fonts'
 
 export const Title = ({ content }) => {
-  return (
-
-      <TitleStyles>{ content }</TitleStyles>
-
-  )
+  return <TitleStyles>{content}</TitleStyles>
 }
 
 const TitleStyles = styled.h3`

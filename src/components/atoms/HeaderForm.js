@@ -18,8 +18,9 @@ const Header = styled.header`
   text-align: center;
   box-sizing: border-box;
 
-  ${props => props.marginB_30 && css`
-    margin-bottom: 30px;
-  `}
-
+  ${(props) =>
+    props.marginB_30 &&
+    css`
+      margin-bottom: 30px;
+    `}
 `

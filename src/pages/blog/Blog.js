@@ -7,15 +7,15 @@ export const Blog = () => {
   const newsdata = useContext(NewContext)
   console.log(newsdata)
   return (
-      <>
-        <ContenedorGlobal>
-          <h2>Blog</h2>
-          <CardBlog/>
-          <CardBlog/>
-          <CardBlog/>
-          <CardBlog/>
-        </ContenedorGlobal>
-      </>
+    <>
+      <ContenedorGlobal>
+        <h2>Blog</h2>
+        <CardBlog />
+        <CardBlog />
+        <CardBlog />
+        <CardBlog />
+      </ContenedorGlobal>
+    </>
   )
 }
 

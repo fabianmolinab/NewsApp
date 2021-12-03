@@ -13,11 +13,12 @@ export const InputCheckbox = ({ estado, cambiarEstado, id }) => {
   }
 
   return (
-      <Input type="checkbox"
-             checked={ estado.checked }
-             onChange={ handleInputChange }
-             id={ id }
-      />
+    <Input
+      type="checkbox"
+      checked={estado.checked}
+      onChange={handleInputChange}
+      id={id}
+    />
   )
 }
 

@@ -13,35 +13,37 @@ import { Nav } from '../atoms/Nav'
 
 export const MenuNav = ({ menu, cambiarMenu }) => {
   return (
+    <ContenedorNav menu={menu.estado}>
+      <Nav
+        estado={menu}
+        cambiarEstado={cambiarMenu}
+        nombre="Lo nuevo"
+        to="/nuevo"
+      />
 
-      <ContenedorNav menu={ menu.estado }>
+      <Nav
+        estado={menu}
+        cambiarEstado={cambiarMenu}
+        nombre="Destacados"
+        to="/destacados"
+      />
 
-        <Nav estado={ menu }
-             cambiarEstado={ cambiarMenu }
-             nombre="Lo nuevo"
-             to="/nuevo"
-        />
+      <Nav
+        estado={menu}
+        cambiarEstado={cambiarMenu}
+        nombre="Podcasts"
+        to="/podcasts"
+      />
 
-        <Nav estado={ menu }
-             cambiarEstado={ cambiarMenu }
-             nombre="Destacados"
-             to="/destacados"
-        />
+      <Nav
+        estado={menu}
+        cambiarEstado={cambiarMenu}
+        nombre="Videos"
+        to="/videos"
+      />
 
-        <Nav estado={ menu }
-             cambiarEstado={ cambiarMenu }
-             nombre="Podcasts"
-             to="/podcasts"
-        />
-
-        <Nav estado={ menu }
-             cambiarEstado={ cambiarMenu }
-             nombre="Videos"
-             to="/videos"
-        />
-
-        <InputBusqueda menuNav/>
-      </ContenedorNav>
+      <InputBusqueda menuNav />
+    </ContenedorNav>
   )
 }
 
@@ -74,7 +76,9 @@ const ContenedorNav = styled.div`
     overflow: hidden;
   }
 
-  ${props => props.menu === 'true' && css`
-    left: 0;
-  `}
+  ${(props) =>
+    props.menu === 'true' &&
+    css`
+      left: 0;
+    `}
 `
