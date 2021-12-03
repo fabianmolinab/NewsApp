@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
-import styled from 'styled-components';
-import { CardBlog } from '../../components/molecules/CardBlog';
-import { NewContext } from '../../context/NewContext';
+import React, { useContext } from 'react'
+import styled from 'styled-components'
+import { CardBlog } from '../../components/molecules/CardBlog'
+import { NewContext } from '../../context/NewContext'
 
 export const Blog = () => {
-  const newsdata = useContext(NewContext);
-  console.log(newsdata);
+  const newsdata = useContext(NewContext)
+  console.log(newsdata)
   return (
       <>
         <ContenedorGlobal>
@@ -16,9 +16,9 @@ export const Blog = () => {
           <CardBlog/>
         </ContenedorGlobal>
       </>
-  );
-};
+  )
+}
 
 const ContenedorGlobal = styled.div`
   padding: 10px;
-`;
+`

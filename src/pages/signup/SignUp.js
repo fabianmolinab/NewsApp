@@ -1,38 +1,37 @@
 /**
  * Pagina de Registrate
  * */
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Botton } from '../../components/atoms/Botton';
-import { HeaderForm } from '../../components/atoms/HeaderForm';
-import { ImgSignup } from '../../components/atoms/ImgSignup';
-import { InputCheckbox } from '../../components/atoms/InputCheckbox';
-import { MensajeError } from '../../components/atoms/MensajeError';
-import { InputFormulario } from '../../components/molecules/InputFormulario';
-import { expresiones } from '../../const/expresionesRegulares';
-import { GlobalStyle } from '../../styles/GlobalStyle';
-import { ContendorGlobal } from '../login/LoginStyles';
-import { ContenedorGridC2, FormGrid } from './SignUpStyles';
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Botton } from '../../components/atoms/Botton'
+import { HeaderForm } from '../../components/atoms/HeaderForm'
+import { ImgSignup } from '../../components/atoms/ImgSignup'
+import { InputCheckbox } from '../../components/atoms/InputCheckbox'
+import { MensajeError } from '../../components/atoms/MensajeError'
+import { InputFormulario } from '../../components/molecules/InputFormulario'
+import { expresiones } from '../../const/expresionesRegulares'
+import { GlobalStyle } from '../../styles/GlobalStyle'
+import { ContendorGlobal } from '../login/LoginStyles'
+import { ContenedorGridC2, FormGrid } from './SignUpStyles'
 
 export const SignUp = () => {
-
   const [nombre, cambiarNombre] = useState({
-    campo: '', valido: null,
-  });
+    campo: '', valido: null
+  })
   const [correo1, cambiarCorreo1] = useState({
-    campo: '', valido: null,
-  });
+    campo: '', valido: null
+  })
   const [correo2, cambiarCorreo2] = useState({
-    campo: '', valido: null,
-  });
+    campo: '', valido: null
+  })
   const [password1, cambiarPassword1] = useState({
-    campo: '', valido: null,
-  });
+    campo: '', valido: null
+  })
   const [password2, cambiarPassword2] = useState({
-    campo: '', valido: null,
-  });
+    campo: '', valido: null
+  })
 
-  const [terminos, cambiarTerminos] = useState({checked: false});
+  const [terminos, cambiarTerminos] = useState({ checked: false })
 
   /** Hook que cambia el estado para mostrar o no aviso despues del envio de el formulario
    * Correcto: Es cuando el formulario cumple con todas las condiciones y el mensaje que se envia es el correcto.
@@ -41,36 +40,34 @@ export const SignUp = () => {
    */
 
   const [mensajeConfirmacion, cambiarMensajeConfirmacion] = useState({
-    correcto: 'false', fallido: 'false',
-  });
+    correcto: 'false', fallido: 'false'
+  })
 
-  const handleLogin = ( e ) => {
-    e.preventDefault();
+  const handleLogin = (e) => {
+    e.preventDefault()
 
     // Este es el primer condicional que valida cada input del formulario
 
     if (nombre.valido === 'true' && correo1.valido === 'true' &&
         correo2.valido === 'true' && password1.valido === 'true' &&
         password2.valido === 'true' && terminos.checked === true) {
-
-      /*Segunda condicion que valida que los campos de correo y de contraseña son iguales */
+      /* Segunda condicion que valida que los campos de correo y de contraseña son iguales */
       if (correo1.campo === correo2.campo && password1.campo ===
           password2.campo) {
         cambiarMensajeConfirmacion({
-          correcto: 'true', fallido: 'false',
-        });
-
+          correcto: 'true', fallido: 'false'
+        })
       } else {
         cambiarMensajeConfirmacion({
-          correcto: 'false', fallido: 'true',
-        });
+          correcto: 'false', fallido: 'true'
+        })
       }
     } else {
       cambiarMensajeConfirmacion({
-        correcto: 'false', fallido: 'true',
-      });
+        correcto: 'false', fallido: 'true'
+      })
     }
-  };
+  }
 
   return (
       <>
@@ -151,7 +148,6 @@ export const SignUp = () => {
               </label>
             </ContenedorGridC2>
 
-
             <Botton type="submit" nombre="Crear Cuenta" largeV/>
 
             <ContenedorGridC2>
@@ -167,6 +163,5 @@ export const SignUp = () => {
         </ContendorGlobal>
 
       </>
-  );
-
-};
+  )
+}

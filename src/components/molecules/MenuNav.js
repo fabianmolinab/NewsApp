@@ -4,15 +4,14 @@
  * @param {function} cambiarMenu cambia el estado para deplegar o no el menu (mobile)
  *
  * */
-import React from 'react';
-import styled, { css } from 'styled-components';
-import { colores } from '../../const/colores';
-import { InputBusqueda } from '../atoms/InputBusqueda';
-import { device } from '../../const/device';
-import { Nav } from '../atoms/Nav';
+import React from 'react'
+import styled, { css } from 'styled-components'
+import { colores } from '../../const/colores'
+import { InputBusqueda } from '../atoms/InputBusqueda'
+import { device } from '../../const/device'
+import { Nav } from '../atoms/Nav'
 
-export const MenuNav = ( {menu, cambiarMenu} ) => {
-
+export const MenuNav = ({ menu, cambiarMenu }) => {
   return (
 
       <ContenedorNav menu={ menu.estado }>
@@ -43,15 +42,15 @@ export const MenuNav = ( {menu, cambiarMenu} ) => {
 
         <InputBusqueda menuNav/>
       </ContenedorNav>
-  );
-};
+  )
+}
 
 const ContenedorNav = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${ colores.marronOscuro };
-  color: ${ colores.blanco };
+  background-color: ${colores.marronOscuro};
+  color: ${colores.blanco};
   padding: 20px 0;
   position: fixed;
   left: 100%;
@@ -63,7 +62,7 @@ const ContenedorNav = styled.div`
   font-size: 20px;
   overflow-y: auto;
 
-  @media ${ device.laptop } {
+  @media ${device.laptop} {
     flex-direction: row;
     justify-content: space-between;
     position: static;
@@ -71,12 +70,11 @@ const ContenedorNav = styled.div`
     top: 0;
     transition: none;
     z-index: auto;
-    background-color: ${ colores.marronClaro };
+    background-color: ${colores.marronClaro};
     overflow: hidden;
   }
 
-  ${ props => props.menu === 'true' && css`
+  ${props => props.menu === 'true' && css`
     left: 0;
-  ` }
-`;
-
+  `}
+`

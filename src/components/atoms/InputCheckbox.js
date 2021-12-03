@@ -4,14 +4,13 @@
  * @param {function} cambiarEstado Cambia el estado
  * @param {string} id Nombre para enlazar el input con el Label
  * */
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-export const InputCheckbox = ( {estado, cambiarEstado, id} ) => {
-
-  const handleInputChange = ( {target} ) => {
-    cambiarEstado ({...estado, checked: target.checked});
-  };
+export const InputCheckbox = ({ estado, cambiarEstado, id }) => {
+  const handleInputChange = ({ target }) => {
+    cambiarEstado({ ...estado, checked: target.checked })
+  }
 
   return (
       <Input type="checkbox"
@@ -19,12 +18,10 @@ export const InputCheckbox = ( {estado, cambiarEstado, id} ) => {
              onChange={ handleInputChange }
              id={ id }
       />
-  );
-};
+  )
+}
 
 const Input = styled.input`
   display: inline-block;
   margin-right: 10px;
-`;
-
-
+`

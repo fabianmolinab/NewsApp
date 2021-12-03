@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
-import { colores } from '../const/colores';
-import { fonts } from '../const/fonts';
+import { createGlobalStyle } from 'styled-components'
+import { colores } from '../const/colores'
+import { fonts } from '../const/fonts'
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -13,12 +13,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    font-family: ${ fonts.regular };
+    font-family: ${fonts.regular};
     font-size: 16px;
   }
 
   body {
-    background-color: ${ colores.blanco };
-    color: ${ colores.textoNegro };
+    background-color: ${colores.blanco};
+    color: ${colores.textoNegro};
   }
-`;
+`

@@ -1,14 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
-import { device } from '../../const/device';
+import React from 'react'
+import styled from 'styled-components'
+import { device } from '../../const/device'
 
 export const ImgLogin = () => {
   return (
     <Img alt="Imagen Login"
       src="./assets/imgs/imagen-login.svg"
     />
-  );
-};
+  )
+}
 
 const Img = styled.img`
   height: 600px;
@@ -24,5 +24,4 @@ const Img = styled.img`
     display: block;
   };
 
-`;
-
+`

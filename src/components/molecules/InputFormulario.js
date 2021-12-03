@@ -9,11 +9,11 @@
  * @param {props} signup Es una propiedad de estilos propios en la pagina signup
  */
 
-import React from 'react';
-import styled, { css } from 'styled-components';
-import { Input } from '../atoms/Input';
-import { LabelInput } from '../atoms/LabelInput';
-import { TituloError } from '../atoms/TituloError';
+import React from 'react'
+import styled, { css } from 'styled-components'
+import { Input } from '../atoms/Input'
+import { LabelInput } from '../atoms/LabelInput'
+import { TituloError } from '../atoms/TituloError'
 
 export const InputFormulario = ({
   estado,
@@ -24,7 +24,6 @@ export const InputFormulario = ({
   expresionRegular,
   signup
 }) => {
-
   return (
     <ContenedorInput signup={signup}>
       <LabelInput
@@ -45,8 +44,8 @@ export const InputFormulario = ({
         error={error}
       />
     </ContenedorInput>
-  );
-};
+  )
+}
 
 const ContenedorInput = styled.div`
   display: flex;
@@ -63,5 +62,5 @@ const ContenedorInput = styled.div`
     input{
       width: 100%;
     }
-  ` }
-`;
+  `}
+`

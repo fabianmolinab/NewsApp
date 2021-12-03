@@ -2,43 +2,42 @@
  Este es el componente que genera la pagina de Login
  */
 
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { Botton } from '../../components/atoms/Botton';
-import { ButtonGradient } from '../../components/atoms/ButtonGradient';
-import { HeaderForm } from '../../components/atoms/HeaderForm';
-import { ImgLogin } from '../../components/atoms/ImgLogin';
-import { InputFormulario } from '../../components/molecules/InputFormulario';
-import { expresiones } from '../../const/expresionesRegulares';
+import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import { Botton } from '../../components/atoms/Botton'
+import { ButtonGradient } from '../../components/atoms/ButtonGradient'
+import { HeaderForm } from '../../components/atoms/HeaderForm'
+import { ImgLogin } from '../../components/atoms/ImgLogin'
+import { InputFormulario } from '../../components/molecules/InputFormulario'
+import { expresiones } from '../../const/expresionesRegulares'
 import {
-  ContendorFormulario, ContendorGlobal, ContenedorFlex,
-} from './LoginStyles';
+  ContendorFormulario, ContendorGlobal, ContenedorFlex
+} from './LoginStyles'
 
 export const LoginScreen = () => {
-
-  //Este hook es para manejar el formulario de Correo
+  // Este hook es para manejar el formulario de Correo
   const [correo, cambiarCorreo] = useState({
-    campo: '', valido: null,
-  });
+    campo: '', valido: null
+  })
 
   const [password, cambiarPassword] = useState({
-    campo: '', valido: null,
-  });
+    campo: '', valido: null
+  })
 
-  const history = useHistory();
+  const history = useHistory()
 
-  const handleLogin = ( e ) => {
-    e.preventDefault();
+  const handleLogin = (e) => {
+    e.preventDefault()
 
-    //Acá se realiza la validación de ambos formularios y redirija a '/'
+    // Acá se realiza la validación de ambos formularios y redirija a '/'
     if (correo.valido === 'true' && password.valido === 'true') {
-      history.push('/');
+      history.push('/')
     }
-  };
+  }
 
   const handleSignUp = () => {
-    history.push('/signup');
-  };
+    history.push('/signup')
+  }
 
   return (
       <>
@@ -80,5 +79,5 @@ export const LoginScreen = () => {
           </ContendorFormulario>
         </ContendorGlobal>
       </>
-  );
-};
+  )
+}

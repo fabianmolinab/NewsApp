@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import { fonts } from '../../../const/fonts';
-import { Parrafo } from '../../../components/atoms/Parrafo';
+import React from 'react'
+import styled from 'styled-components'
+import { fonts } from '../../../const/fonts'
+import { Parrafo } from '../../../components/atoms/Parrafo'
 
 export const SeccionDestacados = () => {
   return (
@@ -31,11 +31,11 @@ export const SeccionDestacados = () => {
           enim incidunt iusto neque non recusandae rerum ut. Corporis cumque eaque
           natus quae quis."/>
       </>
-  );
-};
+  )
+}
 
 const H2 = styled.h2`
-  font-family: ${ fonts.regular };
+  font-family: ${fonts.regular};
   margin: 20px 0 0 10px;
   font-height: 500;
-`;
+`

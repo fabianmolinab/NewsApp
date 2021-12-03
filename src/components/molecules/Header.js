@@ -2,18 +2,17 @@
  * Componente de Header del Blog
  * */
 
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { MenuNav } from './MenuNav';
-import { InputBusqueda } from '../atoms/InputBusqueda';
-import { IconHamburguesa } from '../atoms/IconHamburguesa';
-import { colores } from '../../const/colores';
-import { device } from '../../const/device';
-import { Logo } from '../atoms/Logo';
+import React, { useState } from 'react'
+import styled from 'styled-components'
+import { MenuNav } from './MenuNav'
+import { InputBusqueda } from '../atoms/InputBusqueda'
+import { IconHamburguesa } from '../atoms/IconHamburguesa'
+import { colores } from '../../const/colores'
+import { device } from '../../const/device'
+import { Logo } from '../atoms/Logo'
 
 export const Header = () => {
-
-  const [menu, cambiarMenu] = useState({estado: 'false'});
+  const [menu, cambiarMenu] = useState({ estado: 'false' })
 
   return (
       <ContenedorTotal>
@@ -29,26 +28,26 @@ export const Header = () => {
           />
         </ContenedorHeader>
       </ContenedorTotal>
-  );
-};
+  )
+}
 
 const ContenedorTotal = styled.div`
-  background-color: ${ colores.marronClaro };
+  background-color: ${colores.marronClaro};
   position: static;
 
-`;
+`
 
 const ContenedorHeader = styled.header`
   display: flex;
   padding: 10px;
   height: 50px;
   justify-content: space-between;
-  background-color: ${ colores.marronClaro };
+  background-color: ${colores.marronClaro};
   max-width: 1200px;
   margin: 0 auto;
 
-  @media ${ device.laptop } {
+  @media ${device.laptop} {
     height: 70px;
     padding: 15px;
   }
-`;
+`

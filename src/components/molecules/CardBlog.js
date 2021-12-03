@@ -1,12 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
-import { ImgBlog } from '../atoms/ImgBlog';
-import { Title } from '../atoms/Tittle';
-import { Parrafo } from '../atoms/Parrafo';
-import { colores } from '../../const/colores';
+import React from 'react'
+import styled from 'styled-components'
+import { ImgBlog } from '../atoms/ImgBlog'
+import { Title } from '../atoms/Tittle'
+import { Parrafo } from '../atoms/Parrafo'
+import { colores } from '../../const/colores'
 
 export const CardBlog = () => {
-
   return (
       <ContenedorCard>
         <ImgBlog
@@ -14,7 +13,6 @@ export const CardBlog = () => {
         />
         <ContenedorDescription>
           <button>5 min de lectura</button>
-
 
           <Title
               content="Lorem ipsum dolor sit amet, consectetur."
@@ -25,8 +23,8 @@ export const CardBlog = () => {
           />
         </ContenedorDescription>
       </ContenedorCard>
-  );
-};
+  )
+}
 
 const ContenedorCard = styled.div`
   display: flex;
@@ -47,7 +45,7 @@ const ContenedorCard = styled.div`
     box-shadow: 0 0 72px 36px rgba(0, 0, 0, .08);
   }
 
-`;
+`
 
 const ContenedorDescription = styled.div`
   display: flex;
@@ -57,14 +55,14 @@ const ContenedorDescription = styled.div`
 
   button {
     border: none;
-    background-color: ${ colores.verdeOscuro };
+    background-color: ${colores.verdeOscuro};
     border-radius: 10px;
     padding: 5px;
     font-weight: 600;
-    color: ${ colores.textoNegro }
+    color: ${colores.textoNegro}
   }
 
   p {
     margin-top: 4px;
   }
-`;
+`
