@@ -17,23 +17,23 @@ import { ContenedorGridC2, FormGrid } from './SignUpStyles'
 export const SignUp = () => {
   const [nombre, cambiarNombre] = useState({
     campo: '',
-    valido: null
+    valido: null,
   })
   const [correo1, cambiarCorreo1] = useState({
     campo: '',
-    valido: null
+    valido: null,
   })
   const [correo2, cambiarCorreo2] = useState({
     campo: '',
-    valido: null
+    valido: null,
   })
   const [password1, cambiarPassword1] = useState({
     campo: '',
-    valido: null
+    valido: null,
   })
   const [password2, cambiarPassword2] = useState({
     campo: '',
-    valido: null
+    valido: null,
   })
 
   const [terminos, cambiarTerminos] = useState({ checked: false })
@@ -46,7 +46,7 @@ export const SignUp = () => {
 
   const [mensajeConfirmacion, cambiarMensajeConfirmacion] = useState({
     correcto: 'false',
-    fallido: 'false'
+    fallido: 'false',
   })
 
   const handleLogin = (e) => {
@@ -69,18 +69,18 @@ export const SignUp = () => {
       ) {
         cambiarMensajeConfirmacion({
           correcto: 'true',
-          fallido: 'false'
+          fallido: 'false',
         })
       } else {
         cambiarMensajeConfirmacion({
           correcto: 'false',
-          fallido: 'true'
+          fallido: 'true',
         })
       }
     } else {
       cambiarMensajeConfirmacion({
         correcto: 'false',
-        fallido: 'true'
+        fallido: 'true',
       })
     }
   }

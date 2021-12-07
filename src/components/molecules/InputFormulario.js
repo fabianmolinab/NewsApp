@@ -22,7 +22,7 @@ export const InputFormulario = ({
   type,
   error,
   expresionRegular,
-  signup
+  signup,
 }) => {
   return (
     <ContenedorInput signup={signup}>
