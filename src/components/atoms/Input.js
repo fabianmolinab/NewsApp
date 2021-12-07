@@ -16,12 +16,12 @@ export const Input = ({
   name,
   type,
   valido,
-  expresionRegular,
+  expresionRegular
 }) => {
   const onChange = ({ target }) => {
     cambiarEstado({
       ...estado,
-      campo: target.value,
+      campo: target.value
     })
   }
 
@@ -30,12 +30,12 @@ export const Input = ({
       if (expresionRegular.test(estado.campo)) {
         cambiarEstado({
           ...estado,
-          valido: 'true',
+          valido: 'true'
         })
       } else {
         cambiarEstado({
           ...estado,
-          valido: 'false',
+          valido: 'false'
         })
       }
     }

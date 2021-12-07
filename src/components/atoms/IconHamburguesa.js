@@ -16,12 +16,12 @@ export const IconHamburguesa = ({ menu, cambiarMenu }) => {
     if (menu.estado === 'false') {
       cambiarMenu({
         ...menu,
-        estado: 'true',
+        estado: 'true'
       })
     } else {
       cambiarMenu({
         ...menu,
-        estado: 'false',
+        estado: 'false'
       })
     }
   }

@@ -19,7 +19,7 @@ export const Nav = ({ estado, cambiarEstado, nombre, to }) => {
     if (estado.estado === 'true') {
       cambiarEstado({
         ...estado,
-        estado: 'false',
+        estado: 'false'
       })
     }
   }
@@ -63,5 +63,5 @@ const NavStyle = styled(NavLink)`
 `
 
 const activeStyle = {
-  color: `${colores.verdeOscuro}`,
+  color: `${colores.verdeOscuro}`
 }

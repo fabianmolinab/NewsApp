@@ -12,5 +12,5 @@ export const colores = {
   blanco: '#F3EAD3',
   marronClaro: '#DBCCB4',
   marronOscuro: '#5C4B30',
-  rojo: '#ff2d2d',
+  rojo: '#ff2d2d'
 }

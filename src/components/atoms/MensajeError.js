@@ -11,18 +11,22 @@ export const MensajeError = ({ mensajeConfirmacion }) => {
   return (
     <>
       {mensajeConfirmacion.correcto === 'true' &&
-      mensajeConfirmacion.fallido === 'false' ? (
+      mensajeConfirmacion.fallido === 'false'
+        ? (
         <RegistroEnviado mensaje={mensajeConfirmacion.correcto} correcto>
           Un mensaje fue enviado a su email para confirmar el registro
         </RegistroEnviado>
-      ) : mensajeConfirmacion.correcto === 'false' &&
-        mensajeConfirmacion.fallido === 'true' ? (
+          )
+        : mensajeConfirmacion.correcto === 'false' &&
+        mensajeConfirmacion.fallido === 'true'
+          ? (
         <RegistroEnviado mensaje={mensajeConfirmacion.fallido} fallido>
           Le falto alguno de los cambios
         </RegistroEnviado>
-      ) : (
+            )
+          : (
         <RegistroEnviado mensaje={mensajeConfirmacion.fallido} fallido />
-      )}
+            )}
     </>
   )
 }

@@ -13,19 +13,19 @@ import { expresiones } from '../../const/expresionesRegulares'
 import {
   ContendorFormulario,
   ContendorGlobal,
-  ContenedorFlex,
+  ContenedorFlex
 } from './LoginStyles'
 
 export const LoginScreen = () => {
   // Este hook es para manejar el formulario de Correo
   const [correo, cambiarCorreo] = useState({
     campo: '',
-    valido: null,
+    valido: null
   })
 
   const [password, cambiarPassword] = useState({
     campo: '',
-    valido: null,
+    valido: null
   })
 
   const history = useHistory()
