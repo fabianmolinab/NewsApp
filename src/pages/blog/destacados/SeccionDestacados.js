@@ -5,9 +5,10 @@ import { Parrafo } from '../../../components/atoms/Parrafo'
 
 export const SeccionDestacados = () => {
   return (
-      <>
-        <H2>Hola Mundo</H2>
-        <Parrafo contenido="Lorem ipsum dolor sit amet, consectetur adipisicing elit. At
+    <>
+      <H2>Hola Mundo</H2>
+      <Parrafo
+        contenido="Lorem ipsum dolor sit amet, consectetur adipisicing elit. At
           autem
           dolorem et eum fugit harum maiores optio quam repellendus unde. Ab
           accusamus alias amet animi, aperiam consectetur consequuntur culpa cum
@@ -29,8 +30,9 @@ export const SeccionDestacados = () => {
           modi nemo nisi nostrum pariatur praesentium provident quasi rerum,
           ullam, voluptate voluptates. Alias architecto, consectetur dolorum
           enim incidunt iusto neque non recusandae rerum ut. Corporis cumque eaque
-          natus quae quis."/>
-      </>
+          natus quae quis."
+      />
+    </>
   )
 }
 

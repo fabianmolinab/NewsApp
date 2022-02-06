@@ -8,11 +8,7 @@ import styled, { css } from 'styled-components'
 import { colores } from '../../const/colores'
 
 export const TituloError = ({ valido, error }) => {
-  return (
-      <ParrafoError valido={ valido }>
-        { error }
-      </ParrafoError>
-  )
+  return <ParrafoError valido={valido}>{error}</ParrafoError>
 }
 
 const ParrafoError = styled.p`
@@ -22,10 +18,14 @@ const ParrafoError = styled.p`
   font-weight: 600;
   margin-top: 5px;
 
-  ${props => props.valido === 'true' && css`
-    display: none;
-  `}
-  ${props => props.valido === 'false' && css`
-    display: block;
-  `}
+  ${(props) =>
+    props.valido === 'true' &&
+    css`
+      display: none;
+    `}
+  ${(props) =>
+    props.valido === 'false' &&
+    css`
+      display: block;
+    `}
 `

@@ -4,9 +4,7 @@ import { device } from '../../const/device'
 import { colores } from '../../const/colores'
 
 export const ImgSignup = () => {
-  return (
-      <Img alt="Imagen de Registro" src="./assets/imgs/imagen-signup.svg"/>
-  )
+  return <Img alt="Imagen de Registro" src="./assets/imgs/imagen-signup.svg" />
 }
 
 const Img = styled.img`
@@ -18,7 +16,7 @@ const Img = styled.img`
     height: 600px;
     width: 50%;
     order: 1;
-  };
+  }
   @media ${device.desktop} {
     height: 600px;
     background-color: ${colores.blanco};

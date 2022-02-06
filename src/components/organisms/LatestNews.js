@@ -1,8 +1,5 @@
 import React from 'react'
 
 export const LatestNews = () => {
-  return (
-      <h1>Ultimas Noticias</h1>
-
-  )
+  return <h1>Ultimas Noticias</h1>
 }

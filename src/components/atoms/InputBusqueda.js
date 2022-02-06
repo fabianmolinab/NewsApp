@@ -14,14 +14,12 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 export const InputBusqueda = ({ menuNav }) => {
   return (
-      <ContenedorForm menuNav={ menuNav }>
-        <button>
-          <FontAwesomeIcon icon={ faSearch }/>
-        </button>
-        <Input
-            placeholder="Busca un articulo"
-        />
-      </ContenedorForm>
+    <ContenedorForm menuNav={menuNav}>
+      <button>
+        <FontAwesomeIcon icon={faSearch} />
+      </button>
+      <Input placeholder="Busca un articulo" />
+    </ContenedorForm>
   )
 }
 
@@ -48,13 +46,15 @@ const ContenedorForm = styled.form`
     margin: 0;
   }
 
-  ${props => props.menuNav && css`
-    display: flex;
+  ${(props) =>
+    props.menuNav &&
+    css`
+      display: flex;
 
-    @media ${device.laptop} {
-      display: none;
-    }
-  `}
+      @media ${device.laptop} {
+        display: none;
+      }
+    `}
 `
 
 const Input = styled.input`

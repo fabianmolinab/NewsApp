@@ -6,21 +6,19 @@ import { colores } from '../../const/colores'
 
 export const Logo = () => {
   return (
-      <LinkStyles to="/">
-        <LogoStyles>NewsApp</LogoStyles>
-      </LinkStyles>
+    <LinkStyles to="/">
+      <LogoStyles>NewsApp</LogoStyles>
+    </LinkStyles>
   )
 }
 
 const LogoStyles = styled.h2`
-
   @media ${device.tablet} {
     padding-top: 5px;
-
   }
 
   &:hover {
-    color: ${colores.verdeOscuro}
+    color: ${colores.verdeOscuro};
   }
 `
 const LinkStyles = styled(Link)`

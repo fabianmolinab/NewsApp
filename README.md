@@ -1,6 +1,6 @@
 # News App
 
-News App📑  **es una aplicación web de noticias**, esta desarrollada con tecnologías web modernas consumiendo la API de
+News App📑 **es una aplicación web de noticias**, esta desarrollada con tecnologías web modernas consumiendo la API de
 NewsAPI.
 
 ## Instalación
@@ -30,6 +30,5 @@ La aplicación actualmente está en desarrollo, arreglando blogs y nuevos slides
 
 ## Ideas Futuras
 
-- [ ]  Modo Oscuro
-- [ ]  Noticias según la ciudad del usuario
-
+- [ ] Modo Oscuro
+- [ ] Noticias según la ciudad del usuario

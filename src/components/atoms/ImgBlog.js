@@ -6,10 +6,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 export const ImgBlog = ({ src }) => {
-  return (
-      <ImgStyles src={ src } alt="Descripción del blog"/>
-
-  )
+  return <ImgStyles src={src} alt="Descripción del blog" />
 }
 
 const ImgStyles = styled.img`

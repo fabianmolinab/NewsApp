@@ -10,9 +10,9 @@ import { colores } from '../../const/colores'
 
 export const Botton = ({ onClick, nombre, type, largeV }) => {
   return (
-      <BottonStyles onClick={ onClick } type={ type } largeV={ largeV }>
-        { nombre }
-      </BottonStyles>
+    <BottonStyles onClick={onClick} type={type} largeV={largeV}>
+      {nombre}
+    </BottonStyles>
   )
 }
 
@@ -25,7 +25,7 @@ export const BottonStyles = styled.button`
   border: 1.5px solid ${colores.verde};
   cursor: pointer;
   color: ${colores.blanco};
-  transition: all .4s;
+  transition: all 0.4s;
   border-radius: 8px;
 
   &:hover {
@@ -34,10 +34,12 @@ export const BottonStyles = styled.button`
     transform: scale(1, 1.1);
   }
 
-  ${props => props.largeV && css`
-    width: 200px;
-    margin: 10px auto;
-    background: ${colores.verde};
-    color: ${colores.blanco};
-  `}
+  ${(props) =>
+    props.largeV &&
+    css`
+      width: 200px;
+      margin: 10px auto;
+      background: ${colores.verde};
+      color: ${colores.blanco};
+    `}
 `
