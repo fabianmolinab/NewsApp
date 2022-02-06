@@ -2,10 +2,22 @@
  * Este componente es un boton de tipo gradiente
  * @param {string} nombre Nombre del boton
  * @param {string} type Tipo de boton
- * */
+ **/
 import React from 'react'
 import styled from 'styled-components'
 import { colores } from '../../const/colores'
+
+export const ButtonGradient = ({ nombre, type }) => {
+  return (
+    <>
+      <ContenedorBoton>
+        <Button type={type}>{nombre}</Button>
+        <Bg />
+        <BgGradient />
+      </ContenedorBoton>
+    </>
+  )
+}
 
 const Button = styled.button`
   position: absolute;
@@ -66,15 +78,3 @@ const ContenedorBoton = styled.div`
     );
   }
 `
-
-export const ButtonGradient = ({ nombre, type }) => {
-  return (
-    <>
-      <ContenedorBoton>
-        <Button type={type}>{nombre}</Button>
-        <Bg />
-        <BgGradient />
-      </ContenedorBoton>
-    </>
-  )
-}

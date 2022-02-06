@@ -17,7 +17,7 @@ import {
 } from './LoginStyles'
 
 export const LoginScreen = () => {
-  // Este hook es para manejar el formulario de Correo
+  // Hook para manejar el formulario del correo
   const [correo, cambiarCorreo] = useState({
     campo: '',
     valido: null

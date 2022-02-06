@@ -8,7 +8,6 @@ const FormGrid = styled.form`
   padding: 25px;
 
   @media ${device.tablet} {
-    //display: grid;
     width: 60.5%;
     height: 100%;
     margin-top: 20px;

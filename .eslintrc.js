@@ -3,6 +3,7 @@ const RULES = {
   WARN: 'warn',
   ERROR: 'error'
 }
+
 module.exports = {
   env: {
     browser: true,
@@ -14,12 +15,17 @@ module.exports = {
     ecmaFeatures: {
       jsx: true
     },
-    ecmaVersion: 13,
+    ecmaVersion: 12,
     sourceType: 'module'
   },
-  plugins: ['react', 'prettier'],
+  plugins: ['react'],
   rules: {
     'react/react-in-jsx-scope': RULES.OFF,
     'react/prop-types': RULES.OFF
+  },
+  settings: {
+    react: {
+      version: 'detectect'
+    }
   }
 }
